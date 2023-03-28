@@ -40,6 +40,9 @@
                 "sap.ui.core": {}
             }
         },
+        "resourceRoots": {
+			"sap-app.components": "./components"
+		},
         "models": {},
         "resources": {
             "css": [
