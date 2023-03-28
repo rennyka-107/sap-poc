@@ -151,11 +151,9 @@
 
 					<ObjectPageSubSection title="Employee Details" titleUppercase="false">
 						<blocks>
-							<employment:BlockDetailPart1 id="empdetailpart1" columnLayout="1"/>
+							<employment:BlockDetailPart1 id="empdetailpart1" />
 						</blocks>
-						<moreBlocks>
-							<employment:BlockDetailPart2 id="empdetailpart2" columnLayout="1"/>
-						</moreBlocks>
+						
 					</ObjectPageSubSection>
 
 					

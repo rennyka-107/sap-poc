@@ -1,0 +1,4 @@
+{
+    "Closure": "Closure là tập hợp 1 hàm lồng trong các hàm khác. và khi có 1 hàm được gọi trong 1 hàm khác. thì hàm được khai báo ở trong có thể tham chiếu tới các biến ở bên ngoài. kiểu như chũng có thể tham chiếu đến cái biến ở ngoài phạm vi scope của chúng",
+    "Roter":"Router là 1 thư viện định tuyến tiêu chuẩn cua react. chúng giúp chúng ta giữ lại giao diện liên kết với các thành phần componen tương ứng , và Router thì có thể giúp chúng ta định tuyến luồng dữ liệu 1 cách rõ rầng, ví dụ như chúng ta tạo 1 file router và có đường dẫn là abc, sau đó chúng ta sẽ dùng thẻ RouterLink của roter hỗ trợ. chúng ta lấy thẻ router Link đó lồng vào những action như button hay chuyển trang và trong thẻ router link đó có atribuiti là to hoặc href , khi đó chúng ta chỉ cần truyền abc vào atribuiti đó, khi chúng ta ấn ào thì sẽ chuyển đến trang mà có đường dẫn ta mong muốn"
+}
