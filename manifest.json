@@ -1,133 +1,133 @@
 {
-    "_version": "1.0.0",
-    "sap.app": {
-        "id": "sap-app",
-        "type": "application",
-        "title": "Sap tachyon",
-        "description": "Sap app of Tachyon",
-        "applicationVersion": {
-            "version": "1.0.0"
-        }
-    },
-    "dataSources": {
-        "default": {
-            "uri": "/proxy/",
-            "type": "OData",
-            "settings": {
-                "odataVersion": "4.0"
-            }
-        }
-    },
-    "sap.ui": {
-        "technology": "UI5",
-        "deviceTypes": {
-            "desktop": true,
-            "tablet": true,
-            "phone": true
-        }
-    },
-    "sap.ui5": {
-        "rootView": {
-            "viewName": "sap-app.views.index",
-            "type": "XML",
-            "async": true,
-            "id": "sap-app"
-        },
-        "dependencies": {
-            "minUI5Version": "1.98.0",
-            "libs": {
-                "sap.m": {},
-                "sap.ui.core": {}
-            }
-        },
-        "models": {},
-        "resources": {
-            "css": [
-                {
-                    "uri": "style.css"
-                }
-            ]
-        },
-        "routing": {
-            "config": {
-                "routerClass": "sap.m.routing.Router",
-                "type": "View",
-                "viewType": "XML",
-                "path": "sap-app.views",
-                "controlId": "sap-app",
-                "controlAggregation": "pages",
-                "transition": "slide",
-                "async": true,
-                "bypassed": {
-                    "target": "notFound"
-                }
-            },
-            "routes": [
-                {
-                    "pattern": "",
-                    "name": "home",
-                    "target": "home"
-                },
-                {
-                    "pattern": "login",
-                    "name": "login",
-                    "target": "login"
-                },
-                {
-                    "pattern": "employees",
-                    "name": "employees",
-                    "target": "employees"
-                },
-                {
-                    "pattern": "employees/list",
-                    "name": "employeesList",
-                    "target": "employeeList"
-                },
-                {
-                    "pattern": "employees/list/{id}",
-                    "name": "employeeDetail",
-                    "target": "employeeDetail"
-                }
-            ],
-            "targets": {
-                "home": {
-                    "id": "home",
-                    "name": "home",
-                    "level": 1
-                },
-                "notFound": {
-                    "id": "not-found",
-                    "name": "not-found",
-                    "transition": "show"
-                },
-                "login": {
-                    "id": "login",
-                    "name": "login",
-                    "transition": "show"
-                },
-                "employees": {
-                    "name": "index",
-                    "parent": "home",
-                    "path": "sap-app.views.Employee",
-                    "level": 2,
-                    "controlId": "sap-body",
-                    "controlAggregation": "pages"
-                },
-                "employeeList": {
-                    "parent": "employees",
-                    "path": "sap-app.views.Employee",
-                    "name": "List",
-                    "controlAggregation": "pages",
-                    "controlId": "employeeRoot"
-                },
-                "employeeDetail": {
-                    "parent": "employeeList",
-                    "path": "sap-app.views.Employee",
-                    "name": "Detail",
-                    "controlAggregation": "content",
-                    "controlId": "product-content"
-                }
-            }
-        }
+  "_version": "1.0.0",
+  "sap.app": {
+    "id": "sap-app",
+    "type": "application",
+    "title": "Sap tachyon",
+    "description": "Sap app of Tachyon",
+    "applicationVersion": {
+      "version": "1.0.0"
     }
+  },
+  "dataSources": {
+    "default": {
+      "uri": "/proxy/",
+      "type": "OData",
+      "settings": {
+        "odataVersion": "4.0"
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "rootView": {
+      "viewName": "sap-app.views.index",
+      "type": "XML",
+      "async": true,
+      "id": "sap-app"
+    },
+    "dependencies": {
+      "minUI5Version": "1.98.0",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {}
+      }
+    },
+    "models": {},
+    "resources": {
+      "css": [
+        {
+          "uri": "style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "type": "View",
+        "viewType": "XML",
+        "path": "sap-app.views",
+        "controlId": "sap-app",
+        "controlAggregation": "pages",
+        "transition": "slide",
+        "async": true,
+        "bypassed": {
+          "target": "notFound"
+        }
+      },
+      "routes": [
+        {
+          "pattern": "",
+          "name": "home",
+          "target": "home"
+        },
+        {
+          "pattern": "login",
+          "name": "login",
+          "target": "login"
+        },
+        {
+          "pattern": "employees",
+          "name": "employees",
+          "target": "employees"
+        },
+        {
+          "pattern": "employees/list",
+          "name": "employeesList",
+          "target": "employeeList"
+        },
+        {
+          "pattern": "employees/list/{id}",
+          "name": "employeeDetail",
+          "target": "employeeDetail"
+        }
+      ],
+      "targets": {
+        "home": {
+          "id": "home",
+          "name": "home",
+          "level": 1
+        },
+        "notFound": {
+          "id": "not-found",
+          "name": "not-found",
+          "transition": "show"
+        },
+        "login": {
+          "id": "login",
+          "name": "login",
+          "transition": "show"
+        },
+        "employees": {
+          "name": "index",
+          "parent": "home",
+          "path": "sap-app.views.Employee",
+          "level": 2,
+          "controlId": "sap-body",
+          "controlAggregation": "pages"
+        },
+        "employeeList": {
+          "parent": "employees",
+          "path": "sap-app.views.Employee",
+          "name": "List",
+          "controlAggregation": "pages",
+          "controlId": "employeeRoot"
+        },
+        "employeeDetail": {
+          "parent": "employeeList",
+          "path": "sap-app.views.Employee",
+          "name": "Detail",
+          "controlAggregation": "content",
+          "controlId": "product-content"
+        }
+      }
+    }
+  }
 }
