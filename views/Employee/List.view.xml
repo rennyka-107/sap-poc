@@ -1,0 +1,169 @@
+<mvc:View controllerName="sap-app.controllers.Employee.List" xmlns:df="it.designfuture.qrcode" xmlns:forms="sap.ui.layout.form" xmlns:uxap="sap.uxap" xmlns:l="sap.ui.layout" xmlns="sap.ui.table" xmlns:mvc="sap.ui.core.mvc" xmlns:u="sap.ui.unified" xmlns:c="sap.ui.core" xmlns:m="sap.m" height="100%">
+ <!-- <m:Button icon="sap-icon://generate-shortcut" text="Generate QR Code" type="Accept" press="handleGenerateQRCode"></m:Button>
+ <df:QRCode
+	text="OpenUI5 Rocks!"
+	width="256"
+	height="256"
+	colorDark="#000000"
+	colorLight="#ffffff"
+	correctLevel="2"
+/> -->
+ <!-- <m:HBox>
+      <m:HBox id="qr-code">
+       <m:layoutData>
+        <m:FlexItemData growFactor="1"/>
+       </m:layoutData>
+      </m:HBox>
+     </m:HBox> -->
+   <m:FlexBox width="100%" >
+   <!-- <m:VBox>
+				<c:HTML id="html">
+				</c:HTML>
+			</m:VBox>
+			<m:VBox>
+				<m:HBox>
+<m:Button id="Signature" text="Signature" press="onSign"> </m:Button>
+					<m:Button id="Save" text="Save" press="saveButton"></m:Button>
+					<m:Button id="clear" text="Clear" press="clearButton"></m:Button>
+				</m:HBox>
+			</m:VBox> -->
+   <m:List
+		headerText="Products">
+        	<m:layoutData>
+					<m:FlexItemData
+						growFactor="1"
+						baseSize="0"
+						backgroundDesign="Solid"
+						styleClass="sapUiTinyMargin" />
+				</m:layoutData>
+		<m:ObjectListItem
+				title="Gladiator MX"
+				type="Active"
+				press="onListItemPress(1)"
+				number="87.50"
+				numberUnit="EUR">
+			<m:firstStatus>
+				<m:ObjectStatus
+					text="Available"
+					state="Success" />
+			</m:firstStatus>
+			<m:ObjectAttribute text="125 g" />
+			<m:ObjectAttribute text="145 x 140 x 360 cm" />
+			<m:markers>
+				<m:ObjectMarker type="Favorite" />
+				<m:ObjectMarker type="Flagged" />
+			</m:markers>
+		</m:ObjectListItem>
+		<m:ObjectListItem
+				title="Hurricane GX"
+				type="Active"
+				press="onListItemPress(2)"
+				number="235"
+				numberUnit="EUR">
+			<m:firstStatus>
+				<m:ObjectStatus
+					text="Out of stock"
+					state="Warning" />
+			</m:firstStatus>
+			<m:ObjectAttribute text="34 g" />
+			<m:ObjectAttribute text="45 x 14 x 36 cm" />
+			<m:markers>
+				<m:ObjectMarker type="Flagged" />
+				<m:ObjectMarker type="Locked" />
+			</m:markers>
+		</m:ObjectListItem>
+		<m:ObjectListItem
+				title="Power Projector 4713"
+				type="Active"
+				press="onListItemPress(3)"
+				number="135"
+				numberUnit="EUR">
+			<m:firstStatus>
+				<m:ObjectStatus
+					text="Discontinued"
+					state="Error" />
+			</m:firstStatus>
+			<m:ObjectAttribute text="67 g" />
+			<m:ObjectAttribute text="425 x 35 x 30 cm" />
+			<m:markers>
+				<m:ObjectMarker type="Favorite" />
+				<m:ObjectMarker type="Locked" />
+				<m:ObjectMarker type="Draft" />
+			</m:markers>
+		</m:ObjectListItem>
+		<m:ObjectListItem
+				title="Webcam"
+				type="Active"
+				press="onListItemPress(4)"
+				number="15"
+				numberUnit="EUR">
+			<m:firstStatus>
+				<m:ObjectStatus text="New" />
+			</m:firstStatus>
+			<m:ObjectAttribute text="67 g" />
+			<m:ObjectAttribute text="15 x 15 x 10 cm" />
+			<m:markers>
+				<m:ObjectMarker type="Unsaved" />
+			</m:markers>
+		</m:ObjectListItem>
+        <m:ObjectListItem
+				title="Webcam"
+				type="Active"
+				press="onListItemPress(5)"
+				number="15"
+				numberUnit="EUR">
+			<m:firstStatus>
+				<m:ObjectStatus text="New" />
+			</m:firstStatus>
+			<m:ObjectAttribute text="67 g" />
+			<m:ObjectAttribute text="15 x 15 x 10 cm" />
+			<m:markers>
+				<m:ObjectMarker type="Unsaved" />
+			</m:markers>
+		</m:ObjectListItem>
+        <m:ObjectListItem
+				title="Webcam"
+				type="Active"
+				press="onListItemPress(6)"
+				number="15"
+				numberUnit="EUR">
+			<m:firstStatus>
+				<m:ObjectStatus text="New" />
+			</m:firstStatus>
+			<m:ObjectAttribute text="67 g" />
+			<m:ObjectAttribute text="15 x 15 x 10 cm" />
+			<m:markers>
+				<m:ObjectMarker type="Unsaved" />
+			</m:markers>
+		</m:ObjectListItem>
+        <m:ObjectListItem
+				title="Webcam"
+				type="Active"
+				press="onListItemPress(7)"
+				number="15"
+				numberUnit="EUR">
+			<m:firstStatus>
+				<m:ObjectStatus text="New" />
+			</m:firstStatus>
+			<m:ObjectAttribute text="67 g" />
+			<m:ObjectAttribute text="15 x 15 x 10 cm" />
+			<m:markers>
+				<m:ObjectMarker type="Unsaved" />
+			</m:markers>
+		</m:ObjectListItem>
+	</m:List>
+    <m:Page id="product-content">
+    <m:layoutData>
+					<m:FlexItemData
+						growFactor="1"
+						baseSize="0"
+						backgroundDesign="Solid"
+						styleClass="sapUiTinyMargin" />
+				</m:layoutData>
+        <m:content></m:content>
+    </m:Page>
+   </m:FlexBox>
+   
+	
+
+</mvc:View>

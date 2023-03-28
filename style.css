@@ -1,0 +1,16 @@
+.text-login {
+    color: rgb(12, 154, 236);
+    font-size: 20px;
+}
+
+.side-navigation-demo {
+    display: flex;
+}
+
+.container-sidebar {
+    height: 100%;
+}
+
+.home-view {
+    display: flex;
+}

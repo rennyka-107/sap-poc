@@ -1,0 +1,25 @@
+<mvc:View xmlns:f="sap.f" controllerName="sap-app.controllers.index" xmlns:tnt="sap.tnt" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" class="home-view">
+
+            <tnt:SideNavigation id="sideNavigation" selectedKey="employee-list" class="container-sidebar">
+		<tnt:NavigationList>
+			<tnt:NavigationListItem text="Employees" icon="sap-icon://employee">
+				<tnt:NavigationListItem text="List" id="employee-list" key="employee-list" href="/#/employees/list" />
+				<tnt:NavigationListItem text="Employees" key="employees" href="/#/employees" />
+				<tnt:NavigationListItem text="Sub Item 3" id="subItem3" key="subItem3" />
+				<tnt:NavigationListItem text="Sub Item 4" />
+			</tnt:NavigationListItem>
+			<tnt:NavigationListItem text="Products" icon="sap-icon://building">
+				<tnt:NavigationListItem text="List" />
+				<tnt:NavigationListItem text="Sub Item 2" />
+				<tnt:NavigationListItem text="Sub Item 3" />
+				<tnt:NavigationListItem text="Sub Item 4" />
+			</tnt:NavigationListItem>
+		</tnt:NavigationList>
+	</tnt:SideNavigation>
+    
+     <App id="sap-body" >
+ 
+</App>
+      
+
+</mvc:View>
