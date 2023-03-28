@@ -164,42 +164,13 @@
 
 			<ObjectPageSection titleUppercase="false" title="Table information">
 				<subSections>
-					<ObjectPageSubSection title="Personal Belongings" titleUppercase="false">
-					<ui:Table id="idProductsTable"
-						visibleRowCountMode="Auto"
-						minAutoRowCount="2"
-						rows="{
-							path: 'TableModel>/ProductCollection',
-							sorter: {
-								path: 'Name'
-							}
-						}">
-						<ui:columns>
-							<ui:Column
-								label="Product">
-								<ui:template>
-									<m:Text text="{TableModel>ProductId}" />
-								</ui:template>
-							</ui:Column>
-							<ui:Column
-								label="Supplier">
-								<ui:template>
-									<m:Text text="{TableModel>SupplierName}" />
-								</ui:template>
-							</ui:Column>
-							<ui:Column
-								label="Category">
-								<ui:template>
-									<m:Text text="{TableModel>Category}" />
-								</ui:template>
-							</ui:Column>
-							<ui:Column label="Price">
-								<ui:template>
-									<m:Text text="{TableModel>Price}" />
-								</ui:template>
-							</ui:Column>
-						</ui:columns>
-					</ui:Table>
+					<ObjectPageSubSection title="Salary" titleUppercase="false">
+						<blocks>
+							<employment:BlockDetailPart3
+								id="empdetailpart3"
+								columnLayout="3"
+							/>
+						</blocks>
 					</ObjectPageSubSection>
 				</subSections>
 			</ObjectPageSection>
