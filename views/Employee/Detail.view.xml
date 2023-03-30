@@ -141,7 +141,7 @@
 							<ui:Column
 								label="Product">
 								<ui:template>
-									<m:Text text="{TableModel>ProductId}" />
+									<m:Text text="{TableModel>employeeId}" />
 								</ui:template>
 							</ui:Column>
 							<ui:Column
