@@ -14,3 +14,7 @@
 .home-view {
     display: flex;
 }
+
+.under-body {
+    overflow-y: auto !important;
+}

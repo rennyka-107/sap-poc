@@ -52,7 +52,7 @@
 
 				<snappedHeading>
 					<m:FlexBox fitContainer="true" alignItems="Center">
-						<m:Avatar src="./test-resources/sap/uxap/images/imageID_275314.png" class="sapUiTinyMarginEnd"/>
+						<m:Avatar src="https://sdk.openui5.org/test-resources/sap/uxap/images/imageID_275314.png" class="sapUiTinyMarginEnd"/>
 						<m:Title text="Denise Smith" wrapping="true" />
 					</m:FlexBox>
 				</snappedHeading>
@@ -80,7 +80,7 @@
 
 		<headerContent>
 			<m:FlexBox wrap="Wrap" fitContainer="true" >
-				<m:Avatar class="sapUiSmallMarginEnd" src="./test-resources/sap/uxap/images/imageID_275314.png" displaySize="L" />
+				<m:Avatar class="sapUiSmallMarginEnd" src="https://sdk.openui5.org/test-resources/sap/uxap/images/imageID_275314.png" displaySize="L" />
 
 				<layout:VerticalLayout class="sapUiSmallMarginBeginEnd">
 					<m:Link text="+33 6 4512 5158"/>
@@ -88,8 +88,8 @@
 				</layout:VerticalLayout>
 
 				<layout:HorizontalLayout class="sapUiSmallMarginBeginEnd">
-					<m:Image src="./test-resources/sap/uxap/images/linkedin.png"/>
-					<m:Image src="./test-resources/sap/uxap/images/Twitter.png" class="sapUiSmallMarginBegin"/>
+					<m:Image src="https://sdk.openui5.org/test-resources/sap/uxap/images/linkedin.png"/>
+					<m:Image src="https://sdk.openui5.org/test-resources/sap/uxap/images/Twitter.png" class="sapUiSmallMarginBegin"/>
 				</layout:HorizontalLayout>
 
 				<layout:VerticalLayout class="sapUiSmallMarginBeginEnd">
@@ -149,7 +149,7 @@
 						</blocks>
 					</ObjectPageSubSection> -->
 
-					<ObjectPageSubSection title="Employee Details" titleUppercase="false">
+					<ObjectPageSubSection title="Employee Details" titleUppercase="false" class="under-body">
 						<blocks>
 							<employment:BlockDetailPart1 id="empdetailpart1" columnLayout="1"/>
 						</blocks>
