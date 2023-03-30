@@ -1,0 +1,87 @@
+<mvc:View
+	controllerName="sap-app.controllers.components.BlockDetailPart3"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:form="sap.ui.layout.form"
+	xmlns="sap.m"
+	xmlns:m="sap.ui.webc.main"
+>
+	<Panel
+		expandable="true"
+		headerText="Retirement"
+	>
+		<headerToolbar>
+			<Toolbar>
+				<Title text="Sample Salary Grades for this position"/>
+			</Toolbar>
+		</headerToolbar>
+		<content>
+			<VBox class="sapUiTinyMargin">
+				<m:MessageStrip
+					text="Here some likely Salary Grades for this job. You can pick one of these or provide your own Salary Values"
+					design="Information"
+					close="handleClose"
+				/>
+				<FlexBox
+					wrap="Wrap"
+					height="48px"
+					justifyContent="SpaceBetween"
+					alignItems="Center"
+				>
+					<Text
+						text="Plan code"
+						width="106px"
+						textAlign="Center"
+					/>
+					<Text text="Descripiton"/>
+					<Text text="Enrolled"/>
+				</FlexBox>
+				<FlexBox
+					wrap="Wrap"
+					justifyContent="SpaceBetween"
+					alignItems="Center"
+				>
+					<RadioButton
+						id="RB1-1"
+						text="RET0293"
+					/>
+					<Text text="Descripiton"/>
+					<Text text="483"/>
+				</FlexBox>
+				<FlexBox
+					wrap="Wrap"
+					justifyContent="SpaceBetween"
+					alignItems="Center"
+				>
+					<RadioButton
+						id="RB1-2"
+						text="RET0294"
+					/>
+					<Text text="Descripiton"/>
+					<Text text="325"/>
+				</FlexBox>
+				<FlexBox
+					wrap="Wrap"
+					justifyContent="SpaceBetween"
+					alignItems="Center"
+				>
+					<RadioButton
+						id="RB1-3"
+						text="RET0295"
+					/>
+					<Text text="Descripiton"/>
+					<Text text="839"/>
+				</FlexBox>
+			</VBox>
+		</content>
+	</Panel>
+			<Label text="Drade" />
+			<Input width="100%" value="{/number}"/>
+			<Label text="Hours/Week: Period"/>
+			<Input value="{/time}" width="100%"/>
+			<Label text="Amount/Period: USD "/>
+			<Input value="{/amount}" width="100%"/>
+			<Label text="Annual/Salary: USD "/>
+			<Input value="{/salary}" width="100%"/>
+			<Button text="Submit" press=".handleSubmit"/>
+
+</mvc:View>

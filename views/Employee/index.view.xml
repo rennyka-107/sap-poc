@@ -1,0 +1,14 @@
+<mvc:View
+	controllerName="sap-app.controllers.Employee.index"
+	xmlns="sap.m"
+	xmlns:t="sap.ui.table"
+	xmlns:mvc="sap.ui.core.mvc">
+	<App id="employeeRoot">
+		
+	</App>
+	<!-- <Page title="Employee Page"  class="sapUiResponsiveContentPadding">
+		<content>
+
+		</content>
+	</Page> -->
+</mvc:View>
