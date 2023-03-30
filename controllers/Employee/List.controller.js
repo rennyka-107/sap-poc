@@ -7,7 +7,14 @@ sap.ui.define(
     "sap/ui/model/Sorter",
     "sap/m/MessageBox",
   ],
-  function (BaseController, JSONModel, Filter, FilterOperator, Sorter, MessageBox) {
+  function (
+    BaseController,
+    JSONModel,
+    Filter,
+    FilterOperator,
+    Sorter,
+    MessageBox
+  ) {
     "use strict";
     return BaseController.extend("sap-app.controllers.Employee.List", {
       onInit: function () {
@@ -55,6 +62,7 @@ sap.ui.define(
       },
       onListItemPress: function (n) {
         console.log("haha", n);
+
         this.getRouter().navTo("employeeDetail", { id: 1 });
       },
       handleGenerateQRCode: function () {
