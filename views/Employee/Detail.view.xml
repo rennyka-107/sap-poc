@@ -149,7 +149,7 @@
 						</blocks>
 					</ObjectPageSubSection> -->
 
-					<ObjectPageSubSection title="Employee Details" titleUppercase="false">
+					<ObjectPageSubSection  title="Employee Details" titleUppercase="false">
 						<blocks>
 							<employment:BlockDetailPart1 id="empdetailpart1" columnLayout="1"/>
 						</blocks>
@@ -174,7 +174,19 @@
 					</ObjectPageSubSection>
 				</subSections>
 			</ObjectPageSection>
-
-		</sections>
-	</ObjectPageLayout>
+			<ObjectPageSection titleUppercase="false" title="Table informations">
+						<subSections>
+							<ObjectPageSubSection title="Benefits" titleUppercase="false">
+								<blocks>
+									<employment:BlockDetailPart4
+										id="empdetailpart4"
+										columnLayout="3"
+									/>
+								</blocks>
+							</ObjectPageSubSection>
+						</subSections>
+				</ObjectPageSection>
+				</sections>
+				
+			</ObjectPageLayout>
 </mvc:View>

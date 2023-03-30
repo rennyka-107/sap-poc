@@ -1,0 +1,247 @@
+<mvc:View
+	controllerName="sap-app.components.Employee.employment.BlockDetailPart4"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	xmlns:m="sap.ui.webc.main"
+>
+	<Panel
+		expandable="true"
+		headerText="Retirement"
+	>
+		<headerToolbar>
+			<Toolbar>
+				<Title text="Retirement"/>
+			</Toolbar>
+		</headerToolbar>
+		<content>
+			<VBox class="sapUiTinyMargin">
+			<FlexBox alignItems="Center">
+					<Text text='Plan Ebility' width="100px"/>
+					<Switch state="{/retirement}" customTextOn="On" customTextOff="Off" change="handleChangeRetirement">
+					<layoutData>
+						<FlexItemData growFactor="1" />
+					</layoutData>
+					</Switch>
+				</FlexBox>
+				<m:MessageStrip
+					text="Information with default icon and no close button"
+					design="Information"
+					close="handleClose"
+				/>
+				<FlexBox
+					wrap="Wrap"
+					height="48px"
+					justifyContent="SpaceBetween"
+					alignItems="Center"
+				>
+					<Text
+						text="Plan code"
+						width="106px"
+						textAlign="Center"
+					/>
+					<Text text="Descripiton"/>
+					<Text text="Enrolled"/>
+				</FlexBox>
+				<FlexBox
+					wrap="Wrap"
+					justifyContent="SpaceBetween"
+					alignItems="Center"
+				>
+					<RadioButton
+						id="RB1-1"
+						text="RET0293"
+						enabled="{/retirement}"
+					/>
+					<Text text="Descripiton"/>
+					<Text text="483"/>
+				</FlexBox>
+				<FlexBox
+					wrap="Wrap"
+					justifyContent="SpaceBetween"
+					alignItems="Center"
+				>
+					<RadioButton
+						id="RB1-2"
+						text="RET0294"
+						enabled="{/retirement}"
+					/>
+					<Text text="Descripiton"/>
+					<Text text="325"/>
+				</FlexBox>
+				<FlexBox
+					wrap="Wrap"
+					justifyContent="SpaceBetween"
+					alignItems="Center"
+				>
+					<RadioButton
+						id="RB1-3"
+						text="RET0295"
+						enabled="{/retirement}"
+					/>
+					<Text text="Descripiton"/>
+					<Text text="839"/>
+				</FlexBox>
+			</VBox>
+		</content>
+	</Panel>
+	<Panel
+		expandable="true"
+		headerText="Savings"
+	>
+		<headerToolbar>
+			<Toolbar>
+				<Title text="Savings"/>
+			</Toolbar>
+		</headerToolbar>
+		<content>
+			<VBox class="sapUiTinyMargin">
+			<FlexBox alignItems="Center">
+					<Text text='Plan Ebility' width="100px"/>
+					<Switch state="{/savings}" customTextOn="On" customTextOff="Off" change="handleChangeSavings">
+					<layoutData>
+						<FlexItemData growFactor="1" />
+					</layoutData>
+					</Switch>
+				</FlexBox>
+				<m:MessageStrip
+					text="Information with default icon and no close button"
+					design="Information"
+					close="handleClose"
+				/>
+				<FlexBox
+					wrap="Wrap"
+					height="48px"
+					justifyContent="SpaceBetween"
+					alignItems="Center"
+				>
+					<Text
+						text="Plan code"
+						width="106px"
+						textAlign="Center"
+					/>
+					<Text text="Descripiton"/>
+					<Text text="Enrolled"/>
+				</FlexBox>
+				<FlexBox
+					wrap="Wrap"
+					justifyContent="SpaceBetween"
+					alignItems="Center"
+				>
+					<RadioButton
+						id="RB1-4"
+						text="RET0293"
+						enabled="{/savings}"
+					/>
+					<Text text="Descripiton"/>
+					<Text text="483"/>
+				</FlexBox>
+				<FlexBox
+					wrap="Wrap"
+					justifyContent="SpaceBetween"
+					alignItems="Center"
+				>
+					<RadioButton
+						id="RB1-5"
+						text="RET0294"
+						enabled="{/savings}"
+					/>
+					<Text text="Descripiton"/>
+					<Text text="325"/>
+				</FlexBox>
+				<FlexBox
+					wrap="Wrap"
+					justifyContent="SpaceBetween"
+					alignItems="Center"
+				>
+					<RadioButton
+						id="RB1-6"
+						text="RET0295"
+						enabled="{/savings}"
+					/>
+					<Text text="Descripiton"/>
+					<Text text="839"/>
+				</FlexBox>
+			</VBox>
+		</content>
+	</Panel>
+	<Panel
+		expandable="true"
+		headerText="Health"
+	>
+		<headerToolbar>
+			<Toolbar>
+				<Title text="Health"/>
+			</Toolbar>
+		</headerToolbar>
+		<content>
+			<VBox class="sapUiTinyMargin">
+				<FlexBox alignItems="Center">
+					<Text text='Plan Ebility' width="100px"/>
+					<Switch state="{/health}" customTextOn="On" customTextOff="Off" change=".handleChange">
+					<layoutData>
+						<FlexItemData growFactor="1" />
+					</layoutData>
+					</Switch>
+				</FlexBox>
+				<m:MessageStrip
+					text="Information with default icon and no close button"
+					design="Information"
+					close="handleClose"
+				/>
+				<FlexBox
+					wrap="Wrap"
+					height="48px"
+					justifyContent="SpaceBetween"
+					alignItems="Center"
+				>
+					<Text
+						text="Plan code"
+						width="106px"
+						textAlign="Center"
+					/>
+					<Text text="Descripiton"/>
+					<Text text="Enrolled"/>
+				</FlexBox>
+				<FlexBox
+					wrap="Wrap"
+					justifyContent="SpaceBetween"
+					alignItems="Center"
+				>
+					<RadioButton
+						id="RB1-7"
+						text="RET0293"
+						enabled="{/health}"
+					/>
+					<Text text="Descripiton"/>
+					<Text text="483"/>
+				</FlexBox>
+				<FlexBox
+					wrap="Wrap"
+					justifyContent="SpaceBetween"
+					alignItems="Center"
+				>
+					<RadioButton
+						id="RB1-8"
+						text="RET0294"
+						enabled="{/health}"
+					/>
+					<Text text="Descripiton"/>
+					<Text text="325"/>
+				</FlexBox>
+				<FlexBox
+					wrap="Wrap"
+					justifyContent="SpaceBetween"
+					alignItems="Center"
+				>
+					<RadioButton
+						id="RB1-9"
+						text="RET0295"
+						enabled="{/health}"
+					/>
+					<Text text="Descripiton"/>
+					<Text text="839"/>
+				</FlexBox>
+			</VBox>
+		</content>
+	</Panel>
+</mvc:View>

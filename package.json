@@ -5,7 +5,7 @@
   "description": "base sapui5",
   "main": "index",
   "scripts": {
-    "start": "ui5 serve",
+    "start": "ui5 serve --open index.html",
     "build": "ui5 build"
   },
   "dependencies": {
