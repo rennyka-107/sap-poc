@@ -14,3 +14,9 @@
 .home-view {
     display: flex;
 }
+
+
+.scroll {
+    overflow-y: auto;
+
+}
