@@ -26,6 +26,7 @@
 					singleContainerFullSize="false" />
 			</f:layout>
 			<f:formContainers>
+			
 				<f:FormContainer title="Thông tin cá nhân">
 					<f:formElements>
 						<f:FormElement label="Họ và tên">
@@ -65,25 +66,8 @@
 							</f:fields>
 						</f:FormElement>
 					</f:formElements>
-				</f:FormContainer>
-				<f:FormContainer title="Online">
-					<f:formElements>
-						<f:FormElement label="Web page of the contact">
-							<f:fields>
-								<Input value="{Url}" />
-							</f:fields>
-						</f:FormElement>
-						<f:FormElement label="Twitter account of the contact">
-							<f:fields>
-								<Input value="{Twitter}" />
-							</f:fields>
-						</f:FormElement>
-						<f:FormElement label="Date of Birth">
-							<f:fields>
-									<DatePicker value="28/03/2023" ></DatePicker>
-							</f:fields>
-						</f:FormElement>
-					</f:formElements>
+				
+					
 				</f:FormContainer>
 			</f:formContainers>
 		</f:Form>

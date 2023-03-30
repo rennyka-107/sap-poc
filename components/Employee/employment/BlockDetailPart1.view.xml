@@ -6,19 +6,7 @@
 		
 		
 			 <FlexBox width="100%" > 
-			 	<Panel expandable="true" 
-				headerText="Description">
-				<headerToolbar>
-					<Toolbar>
-						<Title text="Description" />
-					</Toolbar>
-				</headerToolbar>
-				<content>
-					<VBox class="sapUiTinyMargin">
-						<Text text="The Map Container provides a predefined feature set which is tailored for the map usage. The application can integrate additional application specific buttons within the transparent toolbar. In addition the map container provides also a list panel stack which can for instance be used for a legend or other application specific content."/>
-					</VBox>
-				</content>
-			</Panel>
+			 
 			 <VBox fitContainer="true">
 					<layoutData>
 					<FlexItemData
@@ -28,7 +16,7 @@
 					styleClass="sapUiTinyMargin" />
 				</layoutData> 
 				<Title text="Home Address" />
-				<Label text="Name" />
+				
 				<Input id="name" value="{SupplierName}" />
 				<Label text="Street/No." />
 				<Input value="{Street}">
@@ -57,7 +45,6 @@
 				<Input value="{Url}" type="Url"/>
 				</VBox>
 				
-
 				 <VBox fitContainer="true">
 					<layoutData>
 					<FlexItemData
@@ -67,8 +54,8 @@
 						styleClass="sapUiTinyMargin" />
 				</layoutData> 
 				<Title text="Coppy to Mailling" />
-				<Label text="Twitter" />
-				<Input value="{Twitter}" />
+		
+			<Button icon="laptop" text="Coppy to" />
 				
 				</VBox>
 				
@@ -82,7 +69,7 @@
 						styleClass="sapUiTinyMargin" />
 				</layoutData> 
 			<Title text="Contact" />
-				<Label text="Twitter" />
+			
 				<Input value="{Twitter}" />
 				<Label text="Email" />
 				<Input value="{Email}" type="Email"/>
