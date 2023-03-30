@@ -109,7 +109,7 @@
 		<sections>
 			<ObjectPageSection titleUppercase="false" title="2014 Goals Plan">
 				<subSections>
-					<ObjectPageSubSection titleUppercase="false">
+					<ObjectPageSubSection titleUppercase="false" class="scroll-body">
 						<blocks>
 							<goals:BlockDetailPart1 id="goalsblock"/>
 						</blocks>
@@ -139,7 +139,7 @@
 				</subSections>
 			</ObjectPageSection> -->
 
-			<ObjectPageSection titleUppercase="false" title="Employment">
+			<ObjectPageSection titleUppercase="false" title="Employment" > 
 				<subSections>
 					<!-- <ObjectPageSubSection title="Job information" titleUppercase="false">
 						<blocks>
@@ -149,7 +149,7 @@
 						</blocks>
 					</ObjectPageSubSection> -->
 
-					<ObjectPageSubSection  title="Employee Details" titleUppercase="false">
+					<ObjectPageSubSection   title="Employee Details" titleUppercase="false" class="scroll-body">
 						<blocks>
 							<employment:BlockDetailPart1 id="empdetailpart1" columnLayout="1"/>
 						</blocks>
@@ -164,7 +164,7 @@
 
 			<ObjectPageSection titleUppercase="false" title="Table information">
 				<subSections>
-					<ObjectPageSubSection title="Salary" titleUppercase="false">
+					<ObjectPageSubSection title="Salary" titleUppercase="false" class="scroll-body">
 						<blocks>
 							<employment:BlockDetailPart3
 								id="empdetailpart3"
@@ -176,7 +176,7 @@
 			</ObjectPageSection>
 			<ObjectPageSection titleUppercase="false" title="Table informations">
 						<subSections>
-							<ObjectPageSubSection title="Benefits" titleUppercase="false">
+							<ObjectPageSubSection title="Benefits" titleUppercase="false" class="scroll-body">
 								<blocks>
 									<employment:BlockDetailPart4
 										id="empdetailpart4"

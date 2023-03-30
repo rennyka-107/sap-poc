@@ -28,6 +28,7 @@
 					design="Information"
 					close="handleClose"
 				/>
+
 				<FlexBox
 					wrap="Wrap"
 					height="48px"
@@ -47,7 +48,9 @@
 					justifyContent="SpaceBetween"
 					alignItems="Center"
 				>
-					<RadioButton
+				
+					<RadioButton 
+					groupName="retirement"
 						id="RB1-1"
 						text="RET0293"
 						enabled="{/retirement}"
@@ -60,7 +63,8 @@
 					justifyContent="SpaceBetween"
 					alignItems="Center"
 				>
-					<RadioButton
+					<RadioButton 
+					groupName="retirement"
 						id="RB1-2"
 						text="RET0294"
 						enabled="{/retirement}"
@@ -73,7 +77,8 @@
 					justifyContent="SpaceBetween"
 					alignItems="Center"
 				>
-					<RadioButton
+					<RadioButton 
+					groupName="retirement"
 						id="RB1-3"
 						text="RET0295"
 						enabled="{/retirement}"
@@ -81,6 +86,7 @@
 					<Text text="Descripiton"/>
 					<Text text="839"/>
 				</FlexBox>
+					
 			</VBox>
 		</content>
 	</Panel>
@@ -128,6 +134,7 @@
 					alignItems="Center"
 				>
 					<RadioButton
+					groupName="savings"
 						id="RB1-4"
 						text="RET0293"
 						enabled="{/savings}"
@@ -141,6 +148,7 @@
 					alignItems="Center"
 				>
 					<RadioButton
+					groupName="savings"
 						id="RB1-5"
 						text="RET0294"
 						enabled="{/savings}"
@@ -154,6 +162,7 @@
 					alignItems="Center"
 				>
 					<RadioButton
+					groupName="savings"
 						id="RB1-6"
 						text="RET0295"
 						enabled="{/savings}"
@@ -208,6 +217,7 @@
 					alignItems="Center"
 				>
 					<RadioButton
+					groupName="health"
 						id="RB1-7"
 						text="RET0293"
 						enabled="{/health}"
@@ -221,6 +231,7 @@
 					alignItems="Center"
 				>
 					<RadioButton
+					groupName="health"
 						id="RB1-8"
 						text="RET0294"
 						enabled="{/health}"
@@ -234,6 +245,7 @@
 					alignItems="Center"
 				>
 					<RadioButton
+					groupName="health"
 						id="RB1-9"
 						text="RET0295"
 						enabled="{/health}"

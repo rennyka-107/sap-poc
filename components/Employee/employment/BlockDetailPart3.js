@@ -1,6 +1,6 @@
 sap.ui.define(
-  ["sap/uxap/BlockBase", "sap/ui/model/json/JSONModel"],
-  function (BlockBase, JSONModel) {
+  ["sap/uxap/BlockBase", "sap/ui/model/json/JSONModel","sap/ui/model/BindingMode"],
+  function (BlockBase, JSONModel, BindingMode) {
     "use strict";
 
     var BlockEmpDetailPart1 = BlockBase.extend(
@@ -28,7 +28,10 @@ sap.ui.define(
             time: 112,
             amount: 12,
             salary: 10000,
+            username: "admin",
+            password: "admin"
           });
+          
           this.setModel(model);
         },
 
@@ -38,6 +41,9 @@ sap.ui.define(
         handleSubmit: function () {
           console.log(this.getModel());
         },
+        onLogin:function(){
+          console.log("form login now", this.getModel().getData());
+        }
       }
     );
     return BlockEmpDetailPart1;

@@ -1,5 +1,5 @@
 <mvc:View
-	controllerName="sap-app.components.Employee.employment.BlockDetailPart3"
+	controllerName="sap-app.controllers.components.BlockDetailPart3"
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns:form="sap.ui.layout.form"
 	xmlns="sap.m"
@@ -83,6 +83,5 @@
 			<Label text="Annual/Salary: USD "/>
 			<Input value="{/salary}" width="100%"/>
 			<Button text="Submit" press=".handleSubmit"/>
-		
 
 </mvc:View>
