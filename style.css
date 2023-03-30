@@ -18,3 +18,7 @@
 .scroll-body {
   overflow-y: auto !important;
 }
+
+.under-body {
+    overflow-y: auto !important;
+}
