@@ -1,0 +1,223 @@
+
+<mvc:View xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.uxap"
+	xmlns:layout="sap.ui.layout"
+	xmlns:m="sap.m"
+	xmlns:ui="sap.ui.table"
+	xmlns:goals="sap-app.components.Employee.goals"
+	xmlns:employment="sap-app.components.Employee.employment"
+	xmlns:product="sap-app.components.Employee.productTable"
+	xmlns:main="sap.ui.webc.main"
+	controllerName="sap-app.controllers.Employee.Detail"
+	height="100%">
+	<ObjectPageLayout id="ObjectPageLayout"
+		showTitleInHeaderContent="true"
+		selectedSection="paymentSubSection"
+		useIconTabBar="true"
+		upperCaseAnchorBar="false">
+		<headerTitle>
+			<ObjectPageDynamicHeaderTitle>
+				<expandedHeading>
+					<m:Title text="Denise Smith" wrapping="true"/>
+				</expandedHeading>
+
+				<snappedHeading>
+					<m:FlexBox fitContainer="true" alignItems="Center">
+						<m:Avatar src="./test-resources/sap/uxap/images/imageID_275314.png" class="sapUiTinyMarginEnd"/>
+						<m:Title text="Denise Smith" wrapping="true" />
+					</m:FlexBox>
+				</snappedHeading>
+
+				<expandedContent>
+					<m:Text text="Senior UI Developer"/>
+				</expandedContent>
+
+				<snappedContent>
+					<m:Text text="Senior UI Developer"/>
+				</snappedContent>
+
+				<snappedTitleOnMobile>
+					<m:Title text="Senior UI Developer"/>
+				</snappedTitleOnMobile>
+
+				<actions>
+					<m:Button text="Edit" type="Emphasized"/>
+					<m:Button type="Transparent" text="Delete"/>
+					<m:Button type="Transparent" text="Copy"/>
+					<m:OverflowToolbarButton icon="sap-icon://action" type="Transparent" text="Share" tooltip="action"/>
+				</actions>
+			</ObjectPageDynamicHeaderTitle>
+		</headerTitle>
+
+		<headerContent>
+			<m:FlexBox wrap="Wrap" fitContainer="true" >
+				<m:Avatar class="sapUiSmallMarginEnd" src="./test-resources/sap/uxap/images/imageID_275314.png" displaySize="L" />
+
+				<layout:VerticalLayout class="sapUiSmallMarginBeginEnd">
+					<m:Link text="+33 6 4512 5158"/>
+					<m:Link text="DeniseSmith@sap.com"/>
+				</layout:VerticalLayout>
+
+				<layout:HorizontalLayout class="sapUiSmallMarginBeginEnd">
+					<m:Image src="./test-resources/sap/uxap/images/linkedin.png"/>
+					<m:Image src="./test-resources/sap/uxap/images/Twitter.png" class="sapUiSmallMarginBegin"/>
+				</layout:HorizontalLayout>
+
+				<layout:VerticalLayout class="sapUiSmallMarginBeginEnd">
+					<m:Label text="Hello! I am Denise and I use UxAP"/>
+					<m:VBox>
+						<m:Label text="Achieved goals"/>
+						<m:ProgressIndicator percentValue="30" displayValue="30%"/>
+					</m:VBox>
+				</layout:VerticalLayout>
+
+				<layout:VerticalLayout class="sapUiSmallMarginBeginEnd">
+					<m:Label text="San Jose, USA"/>
+				</layout:VerticalLayout>
+			</m:FlexBox>
+			 <!-- <m:VBox fitContainer="true">
+				<m:layoutData>
+					<m:FlexItemData
+						growFactor="1"
+						baseSize="0"
+						backgroundDesign="Solid"
+						styleClass="sapUiTinyMargin" />
+				</m:layoutData> 
+				<main:TabContainer >
+				<main:Tab additionalText="5" icon="menu2" text="Computers">
+				
+							<m:Button icon="sys-monitor" text="1111111111111" />
+				</main:Tab>
+				<main:Tab additionalText="5" icon="menu2" text="Computers">
+					<m:Button icon="sys-monitor" text="222222" />
+				</main:Tab>
+				<main:Tab additionalText="5" icon="menu2" text="Computers">
+					<m:Button icon="my-view" text="33333333" />
+				</main:Tab>
+				 </main:TabContainer>
+				
+				</m:VBox> -->
+		</headerContent>
+	
+
+		<sections>
+			<ObjectPageSection class="scroll"  titleUppercase="false" title="2014 Goals Plan">
+				<subSections>
+					<ObjectPageSubSection titleUppercase="false">
+						<blocks>
+							<goals:BlockDetailPart1 />
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+
+			<ObjectPageSection titleUppercase="false" title="Employment">
+				<subSections>
+					
+					<ObjectPageSubSection title="Employee Details" titleUppercase="false">
+						<blocks>
+							<employment:BlockDetailPart1 id="empdetailpart1" />
+						</blocks>
+						
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+
+		
+
+			<ObjectPageSection titleUppercase="false" title="Table information">
+				<subSections>
+					<ObjectPageSubSection title="Personal Belongings" titleUppercase="false">
+					<ui:Table id="idProductsTable"
+						visibleRowCountMode="Auto"
+						minAutoRowCount="2"
+						rows="{
+							path: 'TableModel>/ProductCollection',
+							sorter: {
+								path: 'Name'
+							}
+						}">
+						<ui:extension>
+							<m:OverflowToolbar style="Clear">
+									<m:Title id="title" text="Products"/>
+										<m:ToolbarSpacer/>
+																<m:Button
+							icon="sap-icon://sorting-ranking"
+							tooltip="Sort ascending across Categories and Name"
+							press="sortCategoriesAndName"/>
+						<m:Button
+							icon="sap-icon://sort"
+							tooltip="Sort Categories in addition to current sorting"
+							press="sortCategories"/>
+						<m:Button
+							icon="sap-icon://decline"
+							tooltip="Clear all sortings"
+							press="clearAllSortings"/>
+							</m:OverflowToolbar>
+						 </ui:extension>
+						 <ui:columns>
+						 	<ui:Column
+						id="name"
+						width="11rem"
+						sortProperty="Name">
+						<m:Label text="Product Name" />
+						<ui:template>
+							<m:Text text="{Name}" wrapping="false" />
+						</ui:template>
+					</ui:Column>
+
+					<ui:Column
+						id="categories"
+						width="11rem"
+						showSortMenuEntry="false"
+						sortProperty="Category">
+						<m:Label text="Category" />
+						<ui:template>
+							<m:Text text="{Category}" wrapping="false" />
+						</ui:template>
+					</ui:Column>
+
+
+						<ui:Column width="11rem">
+						<m:Label text="Product Id" />
+						<ui:template>
+							<m:Input value="{age}"/>
+						</ui:template>
+					</ui:Column>
+
+					<ui:Column width="9rem">
+						<m:Label text="Status" />
+						<ui:template>
+							<m:ObjectStatus text="{Status}" state="{
+								path: 'Available',
+								formatter: '.formatAvailableToObjectState'
+							}"/>
+						</ui:template>
+					</ui:Column>
+
+					<ui:Column width="9rem">
+						<m:Label text="Details" />
+						<ui:template>
+							<m:Button text="Show Details" press="handleDetailsPress"/>
+						</ui:template>
+					</ui:Column>
+
+					<ui:Column width="11rem" hAlign="Center">
+						<m:Label text="Delivery Date" />
+						<ui:template>
+							<m:DatePicker value="{
+								path: 'DeliveryDate',
+								type: 'sap.ui.model.type.Date',
+								formatOptions: {source: {pattern: 'timestamp'}}
+							}"/>
+						</ui:template>
+					</ui:Column>
+				 </ui:columns>
+				</ui:Table>
+				</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+
+		</sections>
+	</ObjectPageLayout>
+</mvc:View>
