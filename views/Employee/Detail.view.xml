@@ -109,7 +109,7 @@
 		<sections>
 			<ObjectPageSection titleUppercase="false" title="2014 Goals Plan">
 				<subSections>
-					<ObjectPageSubSection titleUppercase="false">
+					<ObjectPageSubSection titleUppercase="false" class="scroll-body">
 						<blocks>
 							<goals:BlockDetailPart1 id="goalsblock"/>
 						</blocks>
@@ -139,7 +139,7 @@
 				</subSections>
 			</ObjectPageSection> -->
 
-			<ObjectPageSection titleUppercase="false" title="Employment">
+			<ObjectPageSection titleUppercase="false" title="Employment" > 
 				<subSections>
 					<!-- <ObjectPageSubSection title="Job information" titleUppercase="false">
 						<blocks>
@@ -149,7 +149,7 @@
 						</blocks>
 					</ObjectPageSubSection> -->
 
-					<ObjectPageSubSection title="Employee Details" titleUppercase="false" class="under-body">
+					<ObjectPageSubSection   title="Employee Details" titleUppercase="false" class="scroll-body">
 						<blocks>
 							<employment:BlockDetailPart1 id="empdetailpart1" columnLayout="1"/>
 						</blocks>
@@ -164,46 +164,29 @@
 
 			<ObjectPageSection titleUppercase="false" title="Table information">
 				<subSections>
-					<ObjectPageSubSection title="Personal Belongings" titleUppercase="false">
-					<ui:Table id="idProductsTable"
-						visibleRowCountMode="Auto"
-						minAutoRowCount="2"
-						rows="{
-							path: 'TableModel>/ProductCollection',
-							sorter: {
-								path: 'Name'
-							}
-						}">
-						<ui:columns>
-							<ui:Column
-								label="Product">
-								<ui:template>
-									<m:Text text="{TableModel>ProductId}" />
-								</ui:template>
-							</ui:Column>
-							<ui:Column
-								label="Supplier">
-								<ui:template>
-									<m:Text text="{TableModel>SupplierName}" />
-								</ui:template>
-							</ui:Column>
-							<ui:Column
-								label="Category">
-								<ui:template>
-									<m:Text text="{TableModel>Category}" />
-								</ui:template>
-							</ui:Column>
-							<ui:Column label="Price">
-								<ui:template>
-									<m:Text text="{TableModel>Price}" />
-								</ui:template>
-							</ui:Column>
-						</ui:columns>
-					</ui:Table>
+					<ObjectPageSubSection title="Salary" titleUppercase="false" class="scroll-body">
+						<blocks>
+							<employment:BlockDetailPart3
+								id="empdetailpart3"
+								columnLayout="3"
+							/>
+						</blocks>
 					</ObjectPageSubSection>
 				</subSections>
 			</ObjectPageSection>
-
-		</sections>
-	</ObjectPageLayout>
+			<ObjectPageSection titleUppercase="false" title="Table informations">
+						<subSections>
+							<ObjectPageSubSection title="Benefits" titleUppercase="false" class="scroll-body">
+								<blocks>
+									<employment:BlockDetailPart4
+										id="empdetailpart4"
+										columnLayout="3"
+									/>
+								</blocks>
+							</ObjectPageSubSection>
+						</subSections>
+				</ObjectPageSection>
+				</sections>
+				
+			</ObjectPageLayout>
 </mvc:View>
