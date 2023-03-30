@@ -188,7 +188,7 @@
 					<m:items>
 						<m:ColumnListItem type="Navigation" press=".onListItemPress">
 							<m:cells>
-								<m:ObjectIdentifier title="{products>Name}" text="{products>ProductId}"/>
+								<m:ObjectIdentifier title="{products>Name}" text="{products>employeeId}"/>
 								<m:ObjectNumber
 									number="{
 										parts:[
