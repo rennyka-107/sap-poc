@@ -75,13 +75,13 @@
 		</content>
 	</Panel>
 			<Label text="Grade" />
-			<Input enabled="{/isEditing}" valueLiveUpdate="true" width="100%" value="{/number}"/>
+			<Input enabled="{DetailEmployee>/isEditing}" valueLiveUpdate="true" width="100%" value="{DetailEmployee>/number}"/>
 			<Label text="Hours/Week: Period"/>
-			<Input enabled="{/isEditing}" valueLiveUpdate="true" value="{/time}" width="100%"/>
+			<Input enabled="{DetailEmployee>/isEditing}" valueLiveUpdate="true" value="{DetailEmployee>/time}" width="100%"/>
 			<Label text="Amount/Period: USD "/>
-			<Input enabled="{/isEditing}" valueLiveUpdate="true" value="{/amount}" width="100%"/>
+			<Input enabled="{DetailEmployee>/isEditing}" valueLiveUpdate="true" value="{DetailEmployee>/amount}" width="100%"/>
 			<Label text="Annual/Salary: USD "/>
-			<Input enabled="{/isEditing}" valueLiveUpdate="true" value="{/salary}" width="100%"/>
-			<Button enabled="true" text="Submit" press=".handleSubmit"/>
+			<Input enabled="{DetailEmployee>/isEditing}" valueLiveUpdate="true" value="{DetailEmployee>/salary}" width="100%"/>
+			<Button visible="{DetailEmployee>/isEditing}" text="Submit" press=".handleSubmit"/>
  
 </mvc:View>

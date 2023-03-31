@@ -15,7 +15,7 @@ sap.ui.define(
         // set explored app's demo model on this sample
         console.log(this.initSampleDataModel(), "model");
         var oJSONModel = this.initSampleDataModel();
-        this.getView().setModel(oJSONModel);
+        this.getOwnerComponent().setModel(oJSONModel, "DetailEmployee");
       },
 
       initSampleDataModel: function () {
@@ -87,38 +87,23 @@ sap.ui.define(
           salary: 13000,
           isEditing: true,
         });
-        console.log(data,"data model");
-        let oModel = this.getView().getModel();
-        this.getView().setModel(data);
-        oModel.refresh(true);
-        console.log(this.getView().getModel(),"data model");
+        const hasEditing = this.getOwnerComponent()
+          .getModel("DetailEmployee")
+          .getData().isEditing;
+        if (hasEditing) return;
+        this.getOwnerComponent().setModel(data, "DetailEmployee");
       },
       handleSubmit: function () {
-        let data = new JSONModel({
-          number: 60000,
-          dialogMode: true,
-          listLayout: true,
-          time: 112,
-          amount: 12,
-          salary: 13000,
-          isEditing: true,
-        });
-        console.log(data,"data model");
-        let oModel = this.getView().getModel();
-        this.getView().setModel(data);
-        oModel.refresh(true);
-        console.log(this.getView().getModel(),"data model");
-        // console.log("form submit", this.getView().getModel().getData());
-        // console.log(
-        //   "form submit",
-        //   this.getView().getModel().setProperty(sPath, oValue)
-        // );
-
-        // const { username, password } = this.getView().getModel().getData();
-        // if (username === "admin" && password === "admin") {
-        //   localStorage.setItem("accessToken", "admin-token");
-        //   this.getRouter().navTo("home");
-        // }
+        const oDataModel = this.getOwnerComponent()
+          .getModel("DetailEmployee")
+          .getData();
+        console.log("form submit", oDataModel);
+        var data = Object.assign({}, { ...oDataModel, isEditing: false });
+        this.getOwnerComponent().setModel(
+          new JSONModel(data),
+          "DetailEmployee"
+        );
+        MessageToast.show("Update Success");
       },
       updateMultipleSelection: function (oEvent) {
         var oMultiInput = oEvent.getSource(),
