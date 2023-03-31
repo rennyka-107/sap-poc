@@ -1,5 +1,9 @@
 sap.ui.define(
-  ["sap/uxap/BlockBase", "sap/ui/model/json/JSONModel","sap/ui/model/BindingMode"],
+  [
+    "sap/uxap/BlockBase",
+    "sap/ui/model/json/JSONModel",
+    "sap/ui/model/BindingMode",
+  ],
   function (BlockBase, JSONModel, BindingMode) {
     "use strict";
 
@@ -20,30 +24,7 @@ sap.ui.define(
             },
           },
         },
-     
-        init: function () {
-          BlockBase.prototype.init.apply(this, arguments);
-          const model = new JSONModel({
-            number: 68688,
-            time: 112,
-            amount: 12,
-            salary: 10000,
-            username: "admin",
-            password: "admin"
-          });
-          
-          this.setModel(model);
-        },
 
-        handleClose: function (oEvent) {
-          console.log(oEvent);
-        },
-        handleSubmit: function () {
-          console.log(this.getModel());
-        },
-        onLogin:function(){
-          console.log("form login now", this.getModel().getData());
-        }
       }
     );
     return BlockEmpDetailPart1;
