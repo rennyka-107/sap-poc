@@ -151,7 +151,7 @@
 
 					<ObjectPageSubSection   title="Employee Details"  class="scroll-body">
 						<blocks>
-							<employment:BlockDetailPart1 id="empdetailpart1" columnLayout="1"/>
+							<employment:BlockDetailPart1 width="100%" id="empdetailpart1" columnLayout="1"/>
 						</blocks>
 						<moreBlocks>
 							<employment:BlockDetailPart2 id="empdetailpart2" columnLayout="1"/>

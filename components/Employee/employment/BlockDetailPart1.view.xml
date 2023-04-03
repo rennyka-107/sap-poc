@@ -5,9 +5,9 @@
 	xmlns:core="sap.ui.core">
 		
 		
-			 <FlexBox width="100%" > 
+	 <FlexBox width="800px" > 
 			 
-			 <VBox fitContainer="true">
+			 <VBox  fitContainer="true">
 					<layoutData>
 					<FlexItemData
 					growFactor="1"
@@ -16,8 +16,7 @@
 					styleClass="sapUiTinyMargin" />
 				</layoutData> 
 				<Title text="Home Address" />
-				
-				<Input id="name" value="{SupplierName}" />
+			<Input value="{SupplierName}" id="name"/>
 				<Label text="Street/No." />
 				<Input value="{Street}">
 				</Input>
@@ -60,7 +59,7 @@
 				</VBox>
 				
 
-						 <VBox fitContainer="true">
+		 <VBox fitContainer="true">
 				<layoutData>
 					<FlexItemData
 						growFactor="1"
@@ -75,7 +74,6 @@
 				<Input value="{Email}" type="Email"/>
 				<Label text="Tel." />
 				<Input value="{Tel}" type="Tel"/>
-				</VBox>
-					
-				</FlexBox>
+			</VBox>
+		</FlexBox>
 </core:FragmentDefinition>
