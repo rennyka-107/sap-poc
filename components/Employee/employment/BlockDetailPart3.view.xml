@@ -1,7 +1,7 @@
 <mvc:View
-	controllerName="sap-app.controllers.components.BlockDetailPart3"
+	controllerName="sap-app.controllers.Employee.Detail"
 	xmlns:mvc="sap.ui.core.mvc"
-	xmlns:form="sap.ui.layout.form"
+	 xmlns:p13n="sap.m.p13n"
 	xmlns="sap.m"
 	xmlns:m="sap.ui.webc.main"
 >
@@ -74,14 +74,14 @@
 			</VBox>
 		</content>
 	</Panel>
-			<Label text="Drade" />
-			<Input width="100%" value="{/number}"/>
+			<Label text="Grade" />
+			<Input enabled="{DetailEmployee>/isEditing}" valueLiveUpdate="true" width="100%" value="{DetailEmployee>/number}"/>
 			<Label text="Hours/Week: Period"/>
-			<Input value="{/time}" width="100%"/>
+			<Input enabled="{DetailEmployee>/isEditing}" valueLiveUpdate="true" value="{DetailEmployee>/time}" width="100%"/>
 			<Label text="Amount/Period: USD "/>
-			<Input value="{/amount}" width="100%"/>
+			<Input enabled="{DetailEmployee>/isEditing}" valueLiveUpdate="true" value="{DetailEmployee>/amount}" width="100%"/>
 			<Label text="Annual/Salary: USD "/>
-			<Input value="{/salary}" width="100%"/>
-			<Button text="Submit" press=".handleSubmit"/>
-
+			<Input enabled="{DetailEmployee>/isEditing}" valueLiveUpdate="true" value="{DetailEmployee>/salary}" width="100%"/>
+			<Button visible="{DetailEmployee>/isEditing}" text="Submit" press=".handleSubmit"/>
+ 
 </mvc:View>

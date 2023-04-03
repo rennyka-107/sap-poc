@@ -13,12 +13,22 @@ sap.ui.define(
     return Controller.extend("sap.ui.table.sample.Basic.Controller", {
       onInit: function () {
         // set explored app's demo model on this sample
+        console.log(this.initSampleDataModel(), "model");
         var oJSONModel = this.initSampleDataModel();
-        this.getView().setModel(oJSONModel);
+        this.getOwnerComponent().setModel(oJSONModel, "DetailEmployee");
       },
 
       initSampleDataModel: function () {
         var oModel = new JSONModel();
+        let data = {
+          number: 68688,
+          dialogMode: true,
+          listLayout: true,
+          time: 112,
+          amount: 12,
+          salary: 13000,
+          isEditing: false,
+        };
 
         var oDateFormat = DateFormat.getDateInstance({
           source: { pattern: "timestamp" },
@@ -64,10 +74,37 @@ sap.ui.define(
             Log.error("failed to load json");
           },
         });
-
+        oModel.setData(data);
         return oModel;
       },
-
+      editActive: function () {
+        let data = new JSONModel({
+          number: 60000,
+          dialogMode: true,
+          listLayout: true,
+          time: 112,
+          amount: 12,
+          salary: 13000,
+          isEditing: true,
+        });
+        const hasEditing = this.getOwnerComponent()
+          .getModel("DetailEmployee")
+          .getData().isEditing;
+        if (hasEditing) return;
+        this.getOwnerComponent().setModel(data, "DetailEmployee");
+      },
+      handleSubmit: function () {
+        const oDataModel = this.getOwnerComponent()
+          .getModel("DetailEmployee")
+          .getData();
+        console.log("form submit", oDataModel);
+        var data = Object.assign({}, { ...oDataModel, isEditing: false });
+        this.getOwnerComponent().setModel(
+          new JSONModel(data),
+          "DetailEmployee"
+        );
+        MessageToast.show("Update Success");
+      },
       updateMultipleSelection: function (oEvent) {
         var oMultiInput = oEvent.getSource(),
           sTokensPath =

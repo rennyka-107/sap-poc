@@ -1,4 +1,4 @@
-<mvc:View controllerName="sap-app.controllers.Employee.List" xmlns:df="it.designfuture.qrcode" xmlns:forms="sap.ui.layout.form" xmlns:uxap="sap.uxap" xmlns:l="sap.ui.layout" xmlns="sap.ui.table" xmlns:mvc="sap.ui.core.mvc" xmlns:u="sap.ui.unified" xmlns:c="sap.ui.core" xmlns:m="sap.m" height="100%">
+<mvc:View controllerName="sap-app.controllers.Employee.List" xmlns:df="it.designfuture.qrcode" xmlns="sap.ui.table" xmlns:mvc="sap.ui.core.mvc" xmlns:u="sap.ui.unified" xmlns:c="sap.ui.core" xmlns:m="sap.m" height="100%">
  <!-- <m:Button icon="sap-icon://generate-shortcut" text="Generate QR Code" type="Accept" press="handleGenerateQRCode"></m:Button>
  <df:QRCode
 	text="OpenUI5 Rocks!"
@@ -188,8 +188,9 @@
 					<m:items>
 						<m:ColumnListItem type="Navigation" press=".onListItemPress">
 							<m:cells>
-								<m:ObjectIdentifier title="{products>Name}" text="{products>employeeId}"/>
-								<m:ObjectNumber
+								<m:ObjectIdentifier title="{products>Name}" text="{products>Position}"/>
+								<m:ObjectIdentifier title="{products>employeeId}" text="{products>Department}"/>
+								<!-- <m:ObjectNumber
 									number="{
 										parts:[
 											{path:'products>Price'},
@@ -198,7 +199,7 @@
 										type: 'sap.ui.model.type.Currency',
 										formatOptions: {showMeasure: false}
 									}"
-									unit="{products>CurrencyCode}"/>
+									unit="{products>CurrencyCode}"/> -->
 							</m:cells>
 						</m:ColumnListItem>
 					</m:items>

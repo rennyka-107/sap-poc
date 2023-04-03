@@ -70,7 +70,7 @@
 				</snappedTitleOnMobile>
 
 				<actions>
-					<m:Button text="Edit" type="Emphasized"/>
+					<m:Button press=".editActive" text="Edit" type="Emphasized"/>
 					<m:Button type="Transparent" text="Delete"/>
 					<m:Button type="Transparent" text="Copy"/>
 					<m:OverflowToolbarButton icon="sap-icon://action" type="Transparent" text="Share" tooltip="action"/>
@@ -107,9 +107,9 @@
 		</headerContent>
 
 		<sections>
-			<ObjectPageSection titleUppercase="false" title="2014 Goals Plan">
+			<ObjectPageSection  title="2014 Goals Plan">
 				<subSections>
-					<ObjectPageSubSection titleUppercase="false" class="scroll-body">
+					<ObjectPageSubSection  class="scroll-body">
 						<blocks>
 							<goals:BlockDetailPart1 id="goalsblock"/>
 						</blocks>
@@ -117,9 +117,9 @@
 				</subSections>
 			</ObjectPageSection>
 
-			<!-- <ObjectPageSection titleUppercase="false" title="Personal">
+			<!-- <ObjectPageSection  title="Personal">
 				<subSections>
-					<ObjectPageSubSection title="Connect" titleUppercase="false">
+					<ObjectPageSubSection title="Connect" >
 						<blocks>
 							<personal:BlockPhoneNumber id="phone"/>
 							<personal:BlockSocial id="social"/>
@@ -128,7 +128,7 @@
 						</blocks>
 					</ObjectPageSubSection>
 
-					<ObjectPageSubSection id="paymentSubSection" title="Payment information" mode="Expanded" titleUppercase="false">
+					<ObjectPageSubSection id="paymentSubSection" title="Payment information" mode="Expanded" >
 						<blocks>
 							<personal:PersonalBlockPart1 id="part1" columnLayout="1"/>
 						</blocks>
@@ -139,9 +139,9 @@
 				</subSections>
 			</ObjectPageSection> -->
 
-			<ObjectPageSection titleUppercase="false" title="Employment" > 
+			<ObjectPageSection  title="Employment" > 
 				<subSections>
-					<!-- <ObjectPageSubSection title="Job information" titleUppercase="false">
+					<!-- <ObjectPageSubSection title="Job information" >
 						<blocks>
 							<employment:BlockJobInfoPart1 id="jobinfopart1"/>
 							<employment:BlockJobInfoPart2 id="jobinfopart2"/>
@@ -149,7 +149,7 @@
 						</blocks>
 					</ObjectPageSubSection> -->
 
-					<ObjectPageSubSection   title="Employee Details" titleUppercase="false" class="scroll-body">
+					<ObjectPageSubSection   title="Employee Details"  class="scroll-body">
 						<blocks>
 							<employment:BlockDetailPart1 id="empdetailpart1" columnLayout="1"/>
 						</blocks>
@@ -162,9 +162,9 @@
 				</subSections>
 			</ObjectPageSection>
 
-			<ObjectPageSection titleUppercase="false" title="Table information">
+			<ObjectPageSection  title="Table information">
 				<subSections>
-					<ObjectPageSubSection title="Salary" titleUppercase="false" class="scroll-body">
+					<ObjectPageSubSection title="Salary"  class="scroll-body">
 						<blocks>
 							<employment:BlockDetailPart3
 								id="empdetailpart3"
@@ -174,9 +174,9 @@
 					</ObjectPageSubSection>
 				</subSections>
 			</ObjectPageSection>
-			<ObjectPageSection titleUppercase="false" title="Table informations">
+			<ObjectPageSection  title="Table informations">
 						<subSections>
-							<ObjectPageSubSection title="Benefits" titleUppercase="false" class="scroll-body">
+							<ObjectPageSubSection title="Benefits"  class="scroll-body">
 								<blocks>
 									<employment:BlockDetailPart4
 										id="empdetailpart4"
