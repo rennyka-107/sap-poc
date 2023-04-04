@@ -21,6 +21,7 @@ sap.ui.define(
         let oProductsModel = new JSONModel(
           sap.ui.require.toUrl("sap-app/models/products.json")
         );
+        console.log(oProductsModel);
         oProductsModel.setSizeLimit(1000);
         this.getView().setModel(oProductsModel, "products");
         // this.getView().byId("html").setContent("<canvas id='signature-pad' width='400' height='200' class='signature-pad'></canvas>");
@@ -60,10 +61,14 @@ sap.ui.define(
 
         oBinding.sort(oSorter);
       },
-      onListItemPress: function (n) {
-        console.log("haha", n);
-
-        this.getRouter().navTo("employeeDetail", { id: 1 });
+      onListItemPress: function (oEvent) {
+        var supplierPath = oEvent
+            .getSource()
+            .getBindingContext("products")
+            .getPath(),
+          employeeId = supplierPath.split("/").slice(-1).pop();
+        console.log(employeeId);
+        this.getRouter().navTo("employeeDetail", { employeeId });
       },
       handleGenerateQRCode: function () {
         // var Arr = [];

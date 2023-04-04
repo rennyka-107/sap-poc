@@ -23,9 +23,9 @@ sap.ui.define(
         init: function () {
           BlockBase.prototype.init.apply(this, arguments);
           const model = new JSONModel({
-            retirement: true,
-            savings: true,
-            health: true,
+            retirement: false,
+            savings: false,
+            health: false,
           });
           this.setModel(model);
         },

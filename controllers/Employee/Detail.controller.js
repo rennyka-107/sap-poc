@@ -143,7 +143,22 @@ sap.ui.define(
               .getProperty("ProductId", oEvent.getSource().getBindingContext())
         );
       },
-
+      onAfterRendering: function () {
+        const { employeeId } = this.getCurrentParams(
+          this.getOwnerComponent().getRouter()
+        );
+        this.getView().bindElement({
+          path: "/ProductCollection/" + employeeId,
+          model: "products",
+        });
+        console.log(employeeId, "id");
+      },
+      getCurrentParams: function (
+        router = this.getOwnerComponent().getRouter()
+      ) {
+        const currentHash = router.getHashChanger().getHash();
+        return router.getRouteInfoByHash(currentHash)?.arguments;
+      },
       onPaste: function (oEvent) {
         var aData = oEvent.getParameter("data");
         MessageToast.show("Pasted Data: " + aData);

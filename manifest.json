@@ -97,7 +97,7 @@
                     "target": "employeeList"
                 },
                 {
-                    "pattern": "employees/list/{id}",
+                    "pattern": "employees/list/{employeeId}",
                     "name": "employeeDetail",
                     "target": "employeeDetail"
                 }

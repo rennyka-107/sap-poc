@@ -1,0 +1,89 @@
+{
+  "data": [
+    {
+      "employeeId": "HT-1000",
+      "Name": "Vu Tien Chat",
+      "Position": "Junior Analyst Head Qrt",
+      "Department": "SDC-1"
+    },
+    {
+      "employeeId": "HT-1000",
+      "Name": "Vu Tien Chat",
+      "Position": "Junior Analyst Head Qrt",
+      "Department": "SDC-1"
+    },
+    {
+      "employeeId": "HT-1000",
+      "Name": "Vu Tien Chat",
+      "Position": "Junior Analyst Head Qrt",
+      "Department": "SDC-1"
+    }
+  ],
+  "Benefists": {
+    "Retirement": [
+      {
+        "PlanCode": "RET0293",
+        "Description": "string",
+        "Enrolled": 22
+      },
+      {
+        "PlanCode": "RET0293",
+        "Description": "string",
+        "Enrolled": 22
+      }
+    ],
+    "Savings": [
+      {
+        "PlanCode": "RET0293",
+        "Description": "string",
+        "Enrolled": 22
+      },
+      {
+        "PlanCode": "RET0293",
+        "Description": "string",
+        "Enrolled": 22
+      }
+    ],
+    "Health": [
+      {
+        "PlanCode": "RET0293",
+        "Description": "string",
+        "Enrolled": 22
+      },
+      {
+        "PlanCode": "RET0293",
+        "Description": "string",
+        "Enrolled": 22
+      }
+    ]
+  },
+  "Salary": {
+    "SameSalary": [
+      {
+        "PlanCode": "RET0293",
+        "Description": "string",
+        "Enrolled": 22
+      },
+      {
+        "PlanCode": "RET0293",
+        "Description": "string",
+        "Enrolled": 22
+      }
+    ],
+    "Payroll": {
+      "Grade": "string",
+      "HoursPerWeek": 8,
+      "AmountPerPeriod": 7,
+      "SalaryPerYear": 9
+    }
+  },
+  "DetailEmployees": {
+    "Avatar": "string",
+    "Deparment": "string",
+    "Name": "string",
+    "Email": "string",
+    "PhoneNumber": "string",
+    "ShortDescription": "string",
+    "Address": "string"
+  }
+}
