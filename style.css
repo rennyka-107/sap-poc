@@ -22,3 +22,8 @@
     overflow-y: auto;
 
 }
+
+.styleAdd {
+    display: flex;
+    justify-content: center;
+}

@@ -15,11 +15,11 @@ sap.ui.define(
               },
             });
             this.getView().setModel(model);
-            console.log(res, "res");
+            console.log(resssss, "res");
           });
       },
       onAfterRendering: function () {
-        console.log("after rendering");
+        console.log("after renderingssss");
       },
     });
   }

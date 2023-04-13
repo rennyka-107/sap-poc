@@ -1,4 +1,4 @@
-<mvc:View controllerName="sap-app.controllers.Employee.List" xmlns:df="it.designfuture.qrcode" xmlns:forms="sap.ui.layout.form" xmlns:uxap="sap.uxap" xmlns:l="sap.ui.layout" xmlns="sap.ui.table" xmlns:mvc="sap.ui.core.mvc" xmlns:u="sap.ui.unified" xmlns:c="sap.ui.core" xmlns:m="sap.m" height="100%"  xmlns:p13n="sap.m.p13n">
+<mvc:View controllerName="sap-app.controllers.Employee.List" xmlns:df="it.designfuture.qrcode" xmlns:forms="sap.ui.layout.form" xmlns:uxap="sap.uxap" xmlns:l="sap.ui.layout" xmlns="sap.ui.table" xmlns:mvc="sap.ui.core.mvc" xmlns:u="sap.ui.unified" xmlns:c="sap.ui.core" xmlns:m="sap.m" height="100%" xmlns:main="sap.ui.webc.main" >
  
    <m:FlexBox width="100%" >
    
@@ -14,9 +14,13 @@
 					<m:ToolbarSpacer/>
 					<m:SearchField search=".onSearch" width="17.5rem"/>
 					<m:OverflowToolbarButton icon="sap-icon://sort" text="Sort" type="Transparent" press=".onSort"/>
-					<m:OverflowToolbarButton icon="sap-icon://add" id="openBtn" text="Add" type="Transparent" press=".onAdd"/>
-	
-            
+					<!-- <m:OverflowToolbarButton icon="sap-icon://add" id="openBtn" text="Add" type="Transparent" press=".onAdd"/> -->
+					
+					    <m:Button id="openBtn" 
+						icon="sap-icon://add" text="Add"  type="Transparent" press=".handleOpen"/>
+						
+						
+				
 				</m:OverflowToolbar>
 				<m:Table
 					id="productsTable"
@@ -34,7 +38,7 @@
 							<m:Text text="Product"/>
 						</m:Column>
 						<m:Column	hAlign="End">
-							<m:Text text="Price"/>
+							<m:Text text="Price sas"/>
 						</m:Column>
 					</m:columns>
 					<m:items>
@@ -68,7 +72,26 @@
         <m:content></m:content>
     </m:Page>
    </m:FlexBox>
-   
-	
+   	<l:VerticalLayout class="sapUiContentPadding">
+		<main:Dialog width='500px'	 id="helloDialog" resizable="true" draggable="true" headerText="Thêm thành viên">
+		<l:VerticalLayout id="styleAdd" class='styleAdd'>
+			<main:Label for="username" showColon="true" text="Username" />
+				<main:Input id="username" placeholder="Enter username" />
+				<main:Label for="sdt" showColon="true" text="Số điện thoại" />
+
+				<main:Input id="sdt" placeholder="Enter Number phone" />
+
+				<main:Label for="password" showColon="true" text="Password" />
+				<main:Input id="password" type="Password" placeholder="Enter password" />
+				<main:Label for="email" showColon="true" text="Email" />
+				<main:Input id="email" placeholder="Enter e-mail" />
+					
+			</l:VerticalLayout>
+						<main:footer>
+				<main:Button design="Emphasized" click=".handleClose" text="Submit"
+					class="sapUiTinyMarginTop sapUiTinyMarginBottom" />
+			</main:footer>
+		</main:Dialog>
+		</l:VerticalLayout>
 
 </mvc:View>

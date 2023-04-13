@@ -18,11 +18,17 @@ sap.ui.define(
     "use strict";
     return BaseController.extend("sap-app.controllers.Employee.List", {
       onInit: function () {
-        let oProductsModel = new JSONModel(
-          sap.ui.require.toUrl("sap-app/models/products.json")
-        );
+        let oProductsModel = fetch("/proxy/sphinx/salary?sap-client=800", {
+          method: "GET",
+          headers: {
+            Authorization: "Basic dnVvbmc6dHVlbWluaDQ=",
+          },
+        }).then((response) => {
+          console.log(response);
+        });
         oProductsModel.setSizeLimit(1000);
         this.getView().setModel(oProductsModel, "products");
+        console.log("oProductsModel,", oProductsModel);
         // this.getView().byId("html").setContent("<canvas id='signature-pad' width='400' height='200' class='signature-pad'></canvas>");
         this.oView = this.getView();
         this._bDescendingSort = false;
@@ -46,7 +52,15 @@ sap.ui.define(
           .getBinding("items")
           .filter(oTableSearchState, "Application");
       },
-
+      handleOpen: function () {
+        const oDialog = this.getView().byId("helloDialog");
+        console.log("vào đây", oDialog);
+        oDialog.show();
+      },
+      handleClose: function () {
+        var oDialog = this.getView().byId("helloDialog");
+        oDialog.close();
+      },
       onAdd: function () {
         MessageBox.information("This functionality is not ready yet.", {
           title: "Aw, Snap!",
