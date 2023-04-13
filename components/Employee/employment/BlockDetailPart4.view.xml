@@ -17,7 +17,7 @@
 			<VBox class="sapUiTinyMargin">
 			<FlexBox alignItems="Center">
 					<Text text='Plan Ebility' width="100px"/>
-					<Switch state="{/retirement}" customTextOn="On" customTextOff="Off" change="handleChangeRetirement">
+					<Switch enabled="{DetailEmployee>/isEditing}" state="{/retirement}" customTextOn="On" customTextOff="Off" change="handleChangeRetirement">
 					<layoutData>
 						<FlexItemData growFactor="1" />
 					</layoutData>
@@ -103,7 +103,7 @@
 			<VBox class="sapUiTinyMargin">
 			<FlexBox alignItems="Center">
 					<Text text='Plan Ebility' width="100px"/>
-					<Switch state="{/savings}" customTextOn="On" customTextOff="Off" change="handleChangeSavings">
+					<Switch enabled="{DetailEmployee>/isEditing}" state="{/savings}" customTextOn="On" customTextOff="Off" change="handleChangeSavings">
 					<layoutData>
 						<FlexItemData growFactor="1" />
 					</layoutData>
@@ -186,7 +186,7 @@
 			<VBox class="sapUiTinyMargin">
 				<FlexBox alignItems="Center">
 					<Text text='Plan Ebility' width="100px"/>
-					<Switch state="{/health}" customTextOn="On" customTextOff="Off" change=".handleChange">
+					<Switch enabled="{DetailEmployee>/isEditing}" state="{/health}" customTextOn="On" customTextOff="Off" change=".handleChange">
 					<layoutData>
 						<FlexItemData growFactor="1" />
 					</layoutData>

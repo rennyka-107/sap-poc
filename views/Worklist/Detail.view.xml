@@ -1,0 +1,123 @@
+<mvc:View
+	controllerName="sap-app.controllers.Worklist.Detail"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:semantic="sap.f.semantic"
+	xmlns:form="sap.ui.layout.form"
+	xmlns:l="sap.ui.layout">
+
+	<Shell 	id="app">
+		<semantic:SemanticPage
+			id="page"
+			headerPinnable="false"
+			toggleHeaderOnTitleClick="false"
+			busy="{objectView>/busy}"
+			busyIndicatorDelay="{objectView>/delay}">
+			<semantic:titleHeading>
+				<Title text="{/Name}" />
+			</semantic:titleHeading>
+			<semantic:headerContent>
+				<FlexBox
+					alignItems="Start"
+					justifyContent="SpaceBetween">
+					<Panel backgroundDesign="Transparent">
+						<ObjectAttribute
+							title="ProductId"
+							text="{
+								path: '{/ProductID}',
+								formatter: '.formatter.numberUnit'}"/>
+						<ObjectAttribute
+							title="Price"
+							text="{
+								path: 'UnitPrice',
+								formatter: '.formatter.numberUnit'} EUR"/>
+					</Panel>
+					<Panel backgroundDesign="Transparent">
+						<ObjectNumber
+							id="objectHeader"
+							unit="PC"
+							textAlign="End"
+							state="{
+								path: 'UnitsInStock',
+								formatter: '.formatter.quantityState'}"
+							number="{
+								path: 'UnitsInStock',
+								formatter: '.formatter.numberUnit'}">
+						</ObjectNumber>
+						<ObjectStatus
+							text="ObjectDiscontinuedStatusTet}"
+							state="Error"
+							visible="{path:'Discontinued'}"/>
+						<ProgressIndicator
+							width="300px"
+							percentValue="{UnitsInStock}"
+							displayValue="{UnitsInStock}"
+							showValue="true"
+							state="{
+								path: 'UnitsInStock',
+								formatter: '.formatter.quantityState'}" />
+					</Panel>
+	
+				</FlexBox>
+			</semantic:headerContent>
+			<semantic:content>
+				<l:VerticalLayout width="100%">
+				<Panel
+					backgroundDesign="Transparent"
+					headerText="TabTitle">
+					<content>
+						<form:SimpleForm
+							minWidth="1024"
+							maxContainerCols="2"
+							editable="false"
+							layout="ResponsiveGridLayout"
+							labelSpanL="3"
+							labelSpanM="3"
+							emptySpanL="4"
+							emptySpanM="4"
+							columnsL="1"
+							columnsM="1">
+							<form:content>
+								<Label text="Name"/>
+								<Text text="{/SupplierName}"/>
+								<Label text="Address"/>
+								<Text text="{/Price}"/>
+								<Label text="Zipcode} / City"/>
+								<Text text="{Supplier/PostalCode} / {Supplier/City}"/>
+								<Label text="Country"/>
+								<Text text="{/MainCategory}"/>
+							</form:content>
+						</form:SimpleForm>
+					</content>
+				</Panel>
+					<Panel
+						backgroundDesign="Transparent"
+						headerText="ObjectCommentsTabTitle">
+						<content>
+							<FeedInput post=".onPost"/>
+							<List
+								id="idCommentsList"
+								noDataText="ObjectCommentNoDaa}"
+								showSeparators="Inner"
+								items="{
+									path: 'productFeedback>/productComments',
+									sorter: {
+										path: 'date',
+										descending: true
+									}
+								}">
+								<FeedListItem
+									info="{productFeedback>type}"
+									text="{productFeedback>comment}"
+									timestamp="{productFeedback>date}"/>
+							</List>
+						</content>
+					</Panel>
+				</l:VerticalLayout>
+			</semantic:content>
+			<semantic:sendEmailAction>
+				<semantic:SendEmailAction id="shareEmail" press=".onShareEmailPress"/>
+			</semantic:sendEmailAction>
+		</semantic:SemanticPage>
+	</Shell>
+</mvc:View>

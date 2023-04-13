@@ -1,0 +1,150 @@
+<mvc:View
+	controllerName="sap-app.controllers.Worklist.List"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:semantic="sap.f.semantic">
+
+	<semantic:SemanticPage
+		id="page"
+		headerPinnable="false"
+		toggleHeaderOnTitleClick="false"
+		showFooter="true">
+
+		<semantic:titleHeading>
+			<Title text="Manage Works" />
+		</semantic:titleHeading>
+
+		<semantic:headerContent>
+			<IconTabBar
+				id="iconTabBar"
+				select=".onQuickFilter"
+				expandable="false">
+				<items>
+					<IconTabFilter
+						key="all"
+						showAll="true"
+						count="{worklistView>/countAll}"
+						text="{ProductsAll}"/>
+					<IconTabSeparator/>
+					<IconTabFilter
+						key="inStock"
+						icon="sap-icon://message-success"
+						iconColor="Positive"
+						count="{worklistView>/inStock}"
+						text="{InStock}"/>
+					<IconTabFilter
+						key="shortage"
+						icon="sap-icon://message-warning"
+						iconColor="Critical"
+						count="{worklistView>/shortage}"
+						text="{Shortage}"/>
+					<IconTabFilter
+						key="outOfStock"
+						icon="sap-icon://message-error"
+						iconColor="Negative"
+						count="{worklistView>/outOfStock}"
+						text="{OutOfStock}"/>
+				</items>
+				<content>
+					<Table
+						id="table"
+						busyIndicatorDelay="{worklistView>/tableBusyDelay}"
+						growing="true"
+						growingScrollToLoad="true"
+						noDataText="{worklistView>/tableNoDataText}"
+						updateFinished=".onUpdateFinished"
+						width="auto"
+						mode="MultiSelect"
+						items="{
+						path: 'products>/ProductCollection',
+						sorter: {
+							path: 'Name'
+						}
+					}">
+					<headerToolbar>
+						<Toolbar>
+							<Title
+								id="tableHeader"
+								text="{worklistView>/worklistTableTitle}"/>
+							<ToolbarSpacer/>
+							<SearchField
+								id="searchField"
+								tooltip="worklistSearchTooltip"
+								search=".onSearch"
+								width="auto">
+							</SearchField>
+						</Toolbar>
+					</headerToolbar>
+
+						<columns>
+							<Column id="nameColumn">
+								<Text
+									id="name"
+									text="Name"/>
+							</Column>
+							<Column
+								id="supplierNameColumn"
+								demandPopin="false"
+								minScreenWidth="Tablet">
+								<Text text="Supplier"/>
+							</Column>
+							<Column
+								id="unitPriceColumn"
+								hAlign="End"
+								demandPopin="true"
+								minScreenWidth="Tablet">
+								<Text text="Price"/>
+							</Column>
+							<Column id="unitsOnOrderColumn"
+								demandPopin="true"
+								minScreenWidth="Tablet"
+								hAlign="End">
+								<Text text="UnitsOrdered"/>
+							</Column>
+							<Column
+								id="unitsInStockColumn"
+								hAlign="End">
+								<Text text="UnitsInStock"/>
+							</Column>
+						</columns>
+					<items>
+						<ColumnListItem
+							type="Navigation"
+							press=".onPress">
+							<cells>
+								<ObjectIdentifier title="{products>Name}" />
+								<Text text = "{products>SupplierName}"/>
+							<ObjectNumber
+									number="{
+										parts:[
+											{path:'products>Price'},
+											{path:'products>CurrencyCode'}
+										],
+										type: 'sap.ui.model.type.Currency',
+										formatOptions: {showMeasure: false}
+									}"
+									unit="{products>CurrencyCode}"/>
+								<ObjectNumber
+									number="{
+										'path: {products>Price}',
+										formatter: '.formatter.numberUnit'}"
+										unit="PC"/>
+							
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+				</content>
+			</IconTabBar>
+		</semantic:headerContent>
+		<semantic:sendEmailAction>
+			<semantic:SendEmailAction id="shareEmail" press=".onShareEmailPress"/>
+		</semantic:sendEmailAction>
+		<semantic:positiveAction>
+			<semantic:PositiveAction text="TableProductsReorder" press=".onUpdateStockObjects"/>
+		</semantic:positiveAction>
+		<semantic:negativeAction>
+			<semantic:NegativeAction text="TablePorductsUnlist" press=".onUnlistObjects"/>
+		</semantic:negativeAction>
+	</semantic:SemanticPage>
+</mvc:View>
