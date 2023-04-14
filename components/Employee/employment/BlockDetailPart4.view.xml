@@ -1,7 +1,10 @@
 <mvc:View
 	controllerName="sap-app.components.Employee.employment.BlockDetailPart4"
 	xmlns:mvc="sap.ui.core.mvc"
-	xmlns="sap.m"
+	xmlns="sap.m"	
+	xmlns:u="sap.ui.unified"
+	xmlns:tb="sap.ui.table"
+	xmlns:c="sap.ui.core"
 	xmlns:m="sap.ui.webc.main"
 >
 	<Panel
@@ -23,7 +26,7 @@
 					</layoutData>
 					</Switch>
 				</FlexBox>
-				<m:MessageStrip
+				<MessageStrip
 					text="Information with default icon and no close button"
 					design="Information"
 					close="handleClose"
@@ -256,4 +259,31 @@
 			</VBox>
 		</content>
 	</Panel>
+			<tb:Table
+				id="table"
+				rows="{/product}"
+				selectionMode="MultiToggle"
+				visibleRowCount="7"
+				ariaLabelledBy="title">
+				<tb:columns>
+					<tb:Column>
+						<Label text="Product Name" />
+						<tb:template>
+							<Text text="{PLANCODE}" wrapping="false"/>
+						</tb:template>
+					</tb:Column>
+					<tb:Column>
+						<Label text="Product Id" />
+						<tb:template>
+							<Text text="{DESCRIPTION}" wrapping="false"/>
+						</tb:template>
+					</tb:Column>
+					<tb:Column>
+						<Label text="Price" />
+						<tb:template>
+							<u:Currency value="{ENDROLLED}" />
+						</tb:template>
+					</tb:Column>
+				</tb:columns>
+			</tb:Table>
 </mvc:View>

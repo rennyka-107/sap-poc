@@ -27,6 +27,20 @@ sap.ui.define(
             savings: false,
             health: false,
           });
+          // var oModel = new JSONModel();
+          // // set explored app's demo model on this sample
+          // fetch("/proxy/sphinx/get_benefists?sap-client=800", {
+          //   method: "GET",
+          //   headers: {
+          //     Authorization: "Basic dnVvbmc6dHVlbWluaDQ="
+          //   }
+          // }).then(res => res.json()).then(res => {
+          //   oModel.setData(res.SAP_BILL.HEALTH);
+          //   console.log(res.SAP_BILL.HEALTH)
+          //   this.setModel(oModel, "product");
+          //   console.log(this.getModel("product").getData(),"getdata")
+          // })
+
           this.setModel(model);
         },
         handleClose: function (oEvent) {
