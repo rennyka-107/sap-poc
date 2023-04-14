@@ -15,7 +15,7 @@
        </m:layoutData>
       </m:HBox>
      </m:HBox> -->
-   <m:FlexBox width="100%" >
+   <m:FlexBox width="100%" class="min-h-100vh">
    <!-- <m:VBox>
 				<c:HTML id="html">
 				</c:HTML>
