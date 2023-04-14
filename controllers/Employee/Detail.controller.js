@@ -12,8 +12,7 @@ sap.ui.define(
 
     return Controller.extend("sap.ui.table.sample.Basic.Controller", {
       onInit: function () {
-        // set explored app's demo model on this sample
-
+    
 
         var oJSONModel = this.initSampleDataModel();
         this.getOwnerComponent().setModel(oJSONModel, "DetailEmployee");
