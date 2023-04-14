@@ -39,7 +39,8 @@
                 "sap.m": {},
                 "sap.ui.core": {},
                 "sap.ui.webc.main":{},
-                "sap.ui.table": {}
+                "sap.ui.table": {},
+                "sap.f": {}
             }
         },
         "resourceRoots": {
@@ -97,10 +98,20 @@
                     "target": "employeeList"
                 },
                 {
-                    "pattern": "employees/list/{id}",
+                    "pattern": "employees/list/{employeeId}",
                     "name": "employeeDetail",
                     "target": "employeeDetail"
-                }
+                },
+                {
+					"pattern": "worklist",
+					"name": "worklist",
+					"target": ["worklist"]
+				},
+				{
+					"pattern": "Products/{objectId}",
+					"name": "object",
+					"target": ["object"]
+				}
             ],
             "targets": {
                 "home": {
@@ -139,8 +150,28 @@
                     "name": "Detail",
                     "controlAggregation": "content",
                     "controlId": "product-content"
-                }
+                },
+                "worklist": {
+					"name": "List",
+                    "parent": "home",
+					"id": "worklist",
+                    "path": "sap-app.views.Worklist",
+                    "controlId": "sap-body",
+                    "controlAggregation": "pages",
+					"level": 1,
+					"title": "Worklist"
+				},
+				"object": {
+					"name": "Detail",
+                    "parent": "home",
+					"id": "object",
+                    "path": "sap-app.views.Worklist",
+					"level": 2,    
+                    "controlId": "sap-body",
+                    "controlAggregation": "pages",
+					"title": "objectViewTitle"
             }
         }
+       }
     }
 }

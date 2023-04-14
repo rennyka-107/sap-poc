@@ -40,33 +40,35 @@
 	controllerName="sap-app.controllers.Employee.Detail"
 	height="100%">
 	<ObjectPageLayout id="ObjectPageLayout"
+
 		showTitleInHeaderContent="true"
 		selectedSection="paymentSubSection"
 		useIconTabBar="true"
 		upperCaseAnchorBar="false">
+		
 		<headerTitle>
 			<ObjectPageDynamicHeaderTitle>
 				<expandedHeading>
-					<m:Title text="Denise Smith" wrapping="true"/>
+					<m:Title text="{products>Name}" wrapping="true"/>
 				</expandedHeading>
 
 				<snappedHeading>
 					<m:FlexBox fitContainer="true" alignItems="Center">
-						<m:Avatar src="https://sdk.openui5.org/test-resources/sap/uxap/images/imageID_275314.png" class="sapUiTinyMarginEnd"/>
-						<m:Title text="Denise Smith" wrapping="true" />
+						<m:Avatar src="{products>ProductPicUrl}" class="sapUiTinyMarginEnd"/>
+						<m:Title text="{products>Name}" wrapping="true" />
 					</m:FlexBox>
 				</snappedHeading>
 
 				<expandedContent>
-					<m:Text text="Senior UI Developer"/>
+					<m:Text text="{products>Position}"/>
 				</expandedContent>
 
 				<snappedContent>
-					<m:Text text="Senior UI Developer"/>
+					<m:Text text="{products>Position}"/>
 				</snappedContent>
 
 				<snappedTitleOnMobile>
-					<m:Title text="Senior UI Developer"/>
+					<m:Title text="{products>Position}"/>
 				</snappedTitleOnMobile>
 
 				<actions>
@@ -78,13 +80,13 @@
 			</ObjectPageDynamicHeaderTitle>
 		</headerTitle>
 
-		<headerContent>
-			<m:FlexBox wrap="Wrap" fitContainer="true" >
-				<m:Avatar class="sapUiSmallMarginEnd" src="https://sdk.openui5.org/test-resources/sap/uxap/images/imageID_275314.png" displaySize="L" />
+		<headerContent >
+			<m:FlexBox wrap="Wrap" fitContainer="true" height="100vh" >
+				<m:Avatar class="sapUiSmallMarginEnd"  src="{products>ProductPicUrl}" displaySize="L" />
 
 				<layout:VerticalLayout class="sapUiSmallMarginBeginEnd">
 					<m:Link text="+33 6 4512 5158"/>
-					<m:Link text="DeniseSmith@sap.com"/>
+					<m:Link  text="{products>Email}"/>
 				</layout:VerticalLayout>
 
 				<layout:HorizontalLayout class="sapUiSmallMarginBeginEnd">
@@ -93,7 +95,7 @@
 				</layout:HorizontalLayout>
 
 				<layout:VerticalLayout class="sapUiSmallMarginBeginEnd">
-					<m:Label text="Hello! I am Denise and I use UxAP"/>
+					<m:Label text="{products>Description}"/>
 					<m:VBox>
 						<m:Label text="Achieved goals"/>
 						<m:ProgressIndicator percentValue="30" displayValue="30%"/>

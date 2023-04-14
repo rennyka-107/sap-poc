@@ -13,7 +13,8 @@ sap.ui.define(
     return Controller.extend("sap.ui.table.sample.Basic.Controller", {
       onInit: function () {
         // set explored app's demo model on this sample
-        console.log(this.initSampleDataModel(), "model");
+
+
         var oJSONModel = this.initSampleDataModel();
         this.getOwnerComponent().setModel(oJSONModel, "DetailEmployee");
       },
@@ -143,7 +144,22 @@ sap.ui.define(
               .getProperty("ProductId", oEvent.getSource().getBindingContext())
         );
       },
-
+      onAfterRendering: function () {
+        const { employeeId } = this.getCurrentParams(
+          this.getOwnerComponent().getRouter()
+        );
+        this.getView().bindElement({
+          path: "/ProductCollection/" + employeeId,
+          model: "products",
+        });
+        console.log(employeeId, "id");
+      },
+      getCurrentParams: function (
+        router = this.getOwnerComponent().getRouter()
+      ) {
+        const currentHash = router.getHashChanger().getHash();
+        return router.getRouteInfoByHash(currentHash)?.arguments;
+      },
       onPaste: function (oEvent) {
         var aData = oEvent.getParameter("data");
         MessageToast.show("Pasted Data: " + aData);
