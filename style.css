@@ -20,18 +20,13 @@
 }
 
 .scroll {
-<<<<<<< HEAD
     overflow-y: auto;
 
 }
-.orderr {
+/* .orderr {
     height: 100vh;
 }
 .styleAdd {
     display: flex;
     justify-content: center;
-}
-=======
-  overflow-y: auto;
-}
->>>>>>> dev
+} */
