@@ -2,9 +2,6 @@
 	controllerName="sap-app.components.Employee.employment.BlockDetailPart4"
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns="sap.m"	
-	xmlns:u="sap.ui.unified"
-	xmlns:tb="sap.ui.table"
-	xmlns:c="sap.ui.core"
 	xmlns:m="sap.ui.webc.main"
 >
 	<Panel
@@ -16,81 +13,18 @@
 				<Title text="Retirement"/>
 			</Toolbar>
 		</headerToolbar>
-		<content>
-			<VBox class="sapUiTinyMargin">
-			<FlexBox alignItems="Center">
-					<Text text='Plan Ebility' width="100px"/>
-					<Switch enabled="{DetailEmployee>/isEditing}" state="{/retirement}" customTextOn="On" customTextOff="Off" change="handleChangeRetirement">
-					<layoutData>
-						<FlexItemData growFactor="1" />
-					</layoutData>
-					</Switch>
-				</FlexBox>
-				<MessageStrip
-					text="Information with default icon and no close button"
-					design="Information"
-					close="handleClose"
-				/>
-
-				<FlexBox
-					wrap="Wrap"
-					height="48px"
-					justifyContent="SpaceBetween"
-					alignItems="Center"
-				>
-					<Text
-						text="Plan code"
-						width="106px"
-						textAlign="Center"
-					/>
-					<Text text="Descripiton"/>
-					<Text text="Enrolled"/>
-				</FlexBox>
-				<FlexBox
-					wrap="Wrap"
-					justifyContent="SpaceBetween"
-					alignItems="Center"
-				>
-				
-					<RadioButton 
-					groupName="retirement"
-						id="RB1-1"
-						text="RET0293"
-						enabled="{/retirement}"
-					/>
-					<Text text="Descripiton"/>
-					<Text text="483"/>
-				</FlexBox>
-				<FlexBox
-					wrap="Wrap"
-					justifyContent="SpaceBetween"
-					alignItems="Center"
-				>
-					<RadioButton 
-					groupName="retirement"
-						id="RB1-2"
-						text="RET0294"
-						enabled="{/retirement}"
-					/>
-					<Text text="Descripiton"/>
-					<Text text="325"/>
-				</FlexBox>
-				<FlexBox
-					wrap="Wrap"
-					justifyContent="SpaceBetween"
-					alignItems="Center"
-				>
-					<RadioButton 
-					groupName="retirement"
-						id="RB1-3"
-						text="RET0295"
-						enabled="{/retirement}"
-					/>
-					<Text text="Descripiton"/>
-					<Text text="839"/>
-				</FlexBox>
-					
-			</VBox>
+			<content>
+			  <VBox>
+				<List items="{/RETITEMENT}">
+				<CustomListItem>
+				  <FlexBox justifyContent="SpaceBetween" alignItems="Center">
+				  <RadioButton groupName="retirement" text="{PLANCODE}" enabled="{/health}"/>
+					<Text text="{DESCRIPTION}"/>
+					<Text text="{ENDROLLED}"/>
+				  </FlexBox>
+				</CustomListItem>
+				</List>
+ 			 </VBox>
 		</content>
 	</Panel>
 	<Panel
@@ -103,77 +37,17 @@
 			</Toolbar>
 		</headerToolbar>
 		<content>
-			<VBox class="sapUiTinyMargin">
-			<FlexBox alignItems="Center">
-					<Text text='Plan Ebility' width="100px"/>
-					<Switch enabled="{DetailEmployee>/isEditing}" state="{/savings}" customTextOn="On" customTextOff="Off" change="handleChangeSavings">
-					<layoutData>
-						<FlexItemData growFactor="1" />
-					</layoutData>
-					</Switch>
-				</FlexBox>
-				<m:MessageStrip
-					text="Information with default icon and no close button"
-					design="Information"
-					close="handleClose"
-				/>
-				<FlexBox
-					wrap="Wrap"
-					height="48px"
-					justifyContent="SpaceBetween"
-					alignItems="Center"
-				>
-					<Text
-						text="Plan code"
-						width="106px"
-						textAlign="Center"
-					/>
-					<Text text="Descripiton"/>
-					<Text text="Enrolled"/>
-				</FlexBox>
-				<FlexBox
-					wrap="Wrap"
-					justifyContent="SpaceBetween"
-					alignItems="Center"
-				>
-					<RadioButton
-					groupName="savings"
-						id="RB1-4"
-						text="RET0293"
-						enabled="{/savings}"
-					/>
-					<Text text="Descripiton"/>
-					<Text text="483"/>
-				</FlexBox>
-				<FlexBox
-					wrap="Wrap"
-					justifyContent="SpaceBetween"
-					alignItems="Center"
-				>
-					<RadioButton
-					groupName="savings"
-						id="RB1-5"
-						text="RET0294"
-						enabled="{/savings}"
-					/>
-					<Text text="Descripiton"/>
-					<Text text="325"/>
-				</FlexBox>
-				<FlexBox
-					wrap="Wrap"
-					justifyContent="SpaceBetween"
-					alignItems="Center"
-				>
-					<RadioButton
-					groupName="savings"
-						id="RB1-6"
-						text="RET0295"
-						enabled="{/savings}"
-					/>
-					<Text text="Descripiton"/>
-					<Text text="839"/>
-				</FlexBox>
-			</VBox>
+			  <VBox>
+				<List items="{/SAVINGS}">
+				<CustomListItem>
+				  <FlexBox justifyContent="SpaceBetween" alignItems="Center">
+				  <RadioButton groupName="savings" text="{PLANCODE}" enabled="{/health}"/>
+					<Text text="{DESCRIPTION}"/>
+					<Text text="{ENDROLLED}"/>
+				  </FlexBox>
+				</CustomListItem>
+				</List>
+ 			 </VBox>
 		</content>
 	</Panel>
 	<Panel
@@ -186,104 +60,30 @@
 			</Toolbar>
 		</headerToolbar>
 		<content>
-			<VBox class="sapUiTinyMargin">
-				<FlexBox alignItems="Center">
+			  <VBox>
+			  <FlexBox alignItems="Center">
 					<Text text='Plan Ebility' width="100px"/>
-					<Switch enabled="{DetailEmployee>/isEditing}" state="{/health}" customTextOn="On" customTextOff="Off" change=".handleChange">
+					<Switch enabled="{DetailEmployee>/isEditing}" state="{/health`}" customTextOn="On" customTextOff="Off" change=".handleChange">
 					<layoutData>
 						<FlexItemData growFactor="1" />
 					</layoutData>
 					</Switch>
 				</FlexBox>
-				<m:MessageStrip
-					text="Information with default icon and no close button"
+			  	<m:MessageStrip
+					text="Here some likely Salary Grades for this job. You can pick one of these or provide your own Salary Values"
 					design="Information"
 					close="handleClose"
 				/>
-				<FlexBox
-					wrap="Wrap"
-					height="48px"
-					justifyContent="SpaceBetween"
-					alignItems="Center"
-				>
-					<Text
-						text="Plan code"
-						width="106px"
-						textAlign="Center"
-					/>
-					<Text text="Descripiton"/>
-					<Text text="Enrolled"/>
-				</FlexBox>
-				<FlexBox
-					wrap="Wrap"
-					justifyContent="SpaceBetween"
-					alignItems="Center"
-				>
-					<RadioButton
-					groupName="health"
-						id="RB1-7"
-						text="RET0293"
-						enabled="{/health}"
-					/>
-					<Text text="Descripiton"/>
-					<Text text="483"/>
-				</FlexBox>
-				<FlexBox
-					wrap="Wrap"
-					justifyContent="SpaceBetween"
-					alignItems="Center"
-				>
-					<RadioButton
-					groupName="health"
-						id="RB1-8"
-						text="RET0294"
-						enabled="{/health}"
-					/>
-					<Text text="Descripiton"/>
-					<Text text="325"/>
-				</FlexBox>
-				<FlexBox
-					wrap="Wrap"
-					justifyContent="SpaceBetween"
-					alignItems="Center"
-				>
-					<RadioButton
-					groupName="health"
-						id="RB1-9"
-						text="RET0295"
-						enabled="{/health}"
-					/>
-					<Text text="Descripiton"/>
-					<Text text="839"/>
-				</FlexBox>
-			</VBox>
+				<List items="{/HEALTH}">
+				<CustomListItem>
+				  <FlexBox justifyContent="SpaceBetween" alignItems="Center">
+				  <RadioButton groupName="health" text="{PLANCODE}" enabled="{/health}"/>
+					<Text text="{DESCRIPTION}"/>
+					<Text text="{ENDROLLED}"/>
+				  </FlexBox>
+				</CustomListItem>
+				</List>
+ 			 </VBox>
 		</content>
 	</Panel>
-			<tb:Table
-				id="table"
-				rows="{/product}"
-				selectionMode="MultiToggle"
-				visibleRowCount="7"
-				ariaLabelledBy="title">
-				<tb:columns>
-					<tb:Column>
-						<Label text="Product Name" />
-						<tb:template>
-							<Text text="{PLANCODE}" wrapping="false"/>
-						</tb:template>
-					</tb:Column>
-					<tb:Column>
-						<Label text="Product Id" />
-						<tb:template>
-							<Text text="{DESCRIPTION}" wrapping="false"/>
-						</tb:template>
-					</tb:Column>
-					<tb:Column>
-						<Label text="Price" />
-						<tb:template>
-							<u:Currency value="{ENDROLLED}" />
-						</tb:template>
-					</tb:Column>
-				</tb:columns>
-			</tb:Table>
 </mvc:View>
