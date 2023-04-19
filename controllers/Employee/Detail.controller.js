@@ -12,8 +12,6 @@ sap.ui.define(
 
     return Controller.extend("sap.ui.table.sample.Basic.Controller", {
       onInit: function () {
-    
-
         var oJSONModel = this.initSampleDataModel();
         this.getOwnerComponent().setModel(oJSONModel, "DetailEmployee");
       },
@@ -97,7 +95,6 @@ sap.ui.define(
         const oDataModel = this.getOwnerComponent()
           .getModel("DetailEmployee")
           .getData();
-        console.log("form submit", oDataModel);
         var data = Object.assign({}, { ...oDataModel, isEditing: false });
         this.getOwnerComponent().setModel(
           new JSONModel(data),
@@ -151,7 +148,6 @@ sap.ui.define(
           path: "/ProductCollection/" + employeeId,
           model: "products",
         });
-        console.log(employeeId, "id");
       },
       getCurrentParams: function (
         router = this.getOwnerComponent().getRouter()

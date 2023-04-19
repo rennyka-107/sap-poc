@@ -17,7 +17,7 @@ sap.ui.define(
   ) {
     "use strict";
 
-    return BaseController.extend("sap-app.controllers.Worklist.List", {
+    return BaseController.extend("sap-app.controllers.Phongban.List", {
       /* =========================================================== */
       /* lifecycle methods                                           */
       /* =========================================================== */
@@ -135,8 +135,6 @@ sap.ui.define(
               },
               filters: this._mFilters.shortage,
             });
-        } else {
-          sTitle = this.getResourceBundle().getText("worklistTableTitle");
         }
         this.getView()
           .getModel("worklistView")

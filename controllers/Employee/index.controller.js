@@ -10,7 +10,6 @@ sap.ui.define(
         // this.getRouter().navTo("employeesList");
       },
       // onAfterRendering: function () {
-      //   console.log("before rendering");
       // },
     });
   }

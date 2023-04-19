@@ -14,6 +14,12 @@
 				<!-- <tnt:NavigationListItem text="Sub Item 3" id="subItem3" key="subItem3" />
 				<tnt:NavigationListItem text="Sub Item 4" /> -->
 			</tnt:NavigationListItem>
+				<tnt:NavigationListItem text="Phòng Ban" icon="sap-icon://employee">
+				<tnt:NavigationListItem text="List" id="Phongban" key="Phongban" href="/index.html#/Phongban" />
+				<!-- <tnt:NavigationListItem text="Employees" key="employees" href="/#/employees" /> -->
+				<!-- <tnt:NavigationListItem text="Sub Item 3" id="subItem3" key="subItem3" />
+				<tnt:NavigationListItem text="Sub Item 4" /> -->
+			</tnt:NavigationListItem>
 			<!-- <tnt:NavigationListItem text="Products" icon="sap-icon://building">
 				<tnt:NavigationListItem text="List" />
 				<tnt:NavigationListItem text="Sub Item 2" />
