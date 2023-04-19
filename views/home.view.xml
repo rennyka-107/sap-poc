@@ -8,8 +8,8 @@
 				<!-- <tnt:NavigationListItem text="Sub Item 3" id="subItem3" key="subItem3" />
 				<tnt:NavigationListItem text="Sub Item 4" /> -->
 			</tnt:NavigationListItem>
-			<tnt:NavigationListItem text="Work list" icon="sap-icon://employee">
-				<tnt:NavigationListItem text="List" id="work-list" key="work-list" href="/index.html#/worklist" />
+			<tnt:NavigationListItem text="Chức vụ" icon="sap-icon://employee">
+				<tnt:NavigationListItem text="Danh sách" id="work-list" key="work-list" href="/index.html#/worklist" />
 				<!-- <tnt:NavigationListItem text="Employees" key="employees" href="/#/employees" /> -->
 				<!-- <tnt:NavigationListItem text="Sub Item 3" id="subItem3" key="subItem3" />
 				<tnt:NavigationListItem text="Sub Item 4" /> -->
