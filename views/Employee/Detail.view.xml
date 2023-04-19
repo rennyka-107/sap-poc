@@ -40,10 +40,12 @@
 	controllerName="sap-app.controllers.Employee.Detail"
 	height="100%">
 	<ObjectPageLayout id="ObjectPageLayout"
+
 		showTitleInHeaderContent="true"
 		selectedSection="paymentSubSection"
 		useIconTabBar="true"
 		upperCaseAnchorBar="false">
+		
 		<headerTitle>
 			<ObjectPageDynamicHeaderTitle>
 				<expandedHeading>
@@ -78,8 +80,8 @@
 			</ObjectPageDynamicHeaderTitle>
 		</headerTitle>
 
-		<headerContent>
-			<m:FlexBox wrap="Wrap" fitContainer="true" >
+		<headerContent >
+			<m:FlexBox wrap="Wrap" fitContainer="true">
 				<m:Avatar class="sapUiSmallMarginEnd"  src="{products>ProductPicUrl}" displaySize="L" />
 
 				<layout:VerticalLayout class="sapUiSmallMarginBeginEnd">
@@ -151,7 +153,7 @@
 
 					<ObjectPageSubSection   title="Employee Details"  class="scroll-body">
 						<blocks>
-							<employment:BlockDetailPart1 id="empdetailpart1" columnLayout="1"/>
+							<employment:BlockDetailPart1 width="100%" id="empdetailpart1" columnLayout="1"/>
 						</blocks>
 						<moreBlocks>
 							<employment:BlockDetailPart2 id="empdetailpart2" columnLayout="1"/>

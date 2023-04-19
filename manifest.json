@@ -107,6 +107,11 @@
 					"name": "worklist",
 					"target": ["worklist"]
 				},
+                {
+					"pattern": "Phongban",
+					"name": "Phongban",
+					"target": ["Phongban"]
+				},
 				{
 					"pattern": "Products/{objectId}",
 					"name": "object",
@@ -160,6 +165,16 @@
                     "controlAggregation": "pages",
 					"level": 1,
 					"title": "Worklist"
+				},
+                "Phongban": {
+					"name": "List",
+                    "parent": "home",
+					"id": "Phongban",
+                    "path": "sap-app.views.Phongban",
+                    "controlId": "sap-body",
+                    "controlAggregation": "pages",
+					"level": 1,
+					"title": "Phongban"
 				},
 				"object": {
 					"name": "Detail",

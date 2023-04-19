@@ -20,30 +20,39 @@ sap.ui.define(
       onInit: function () {
         var oModel = new JSONModel();
         let oProductsModel = new JSONModel(
-          sap.ui.require.toUrl("sap-app/models/products.json")
+          fetch("/proxy/sphinx/api_get_emp2?sap-client=800", {
+            method: "GET",
+            headers: {
+              Authorization: "Basic dnVvbmc6dHVlbWluaDQ=",
+            },
+          })
+            .then((res) => res.json())
+            .then((res) => {
+              console.log(res);
+              oModel.setData(...res.SAP_DATA);
+              this.setModel(oModel);
+            })
         );
-        console.log(oProductsModel);
         oProductsModel.setSizeLimit(1000);
         // this.getView().setModel(oProductsModel, "products");
         fetch("/proxy/sphinx/get_emp_infor?sap-client=800", {
           method: "GET",
           headers: {
-            Authorization: "Basic dnVvbmc6dHVlbWluaDQ="
-          }
-        }).then(res => res.json()).then(res => {
-          oModel.setData(res);
-          console.log(res)
-          this.getView().setModel(oModel, "products");
+            Authorization: "Basic dnVvbmc6dHVlbWluaDQ=",
+          },
         })
+          .then((res) => res.json())
+          .then((res) => {
+            oModel.setData(res);
+            this.getView().setModel(oModel, "products");
+          });
         // this.getView().byId("html").setContent("<canvas id='signature-pad' width='400' height='200' class='signature-pad'></canvas>");
         this.oView = this.getView();
         this._bDescendingSort = false;
         this.oModel = this.oView.byId("productsTable");
         this.oRouter = this.getOwnerComponent().getRouter();
       },
-      onAfterRendering: function () {
-        console.log("after rendering");
-      },
+      onAfterRendering: function () {},
       onSearch: function (oEvent) {
         var oTableSearchState = [],
           sQuery = oEvent.getParameter("query");
@@ -58,7 +67,14 @@ sap.ui.define(
           .getBinding("items")
           .filter(oTableSearchState, "Application");
       },
-
+      handleOpen: function () {
+        const oDialog = this.getView().byId("helloDialog");
+        oDialog.show();
+      },
+      handleClose: function () {
+        var oDialog = this.getView().byId("helloDialog");
+        oDialog.close();
+      },
       onAdd: function () {
         MessageBox.information("This functionality is not ready yet.", {
           title: "Aw, Snap!",
@@ -78,7 +94,6 @@ sap.ui.define(
             .getBindingContext("products")
             .getPath(),
           employeeId = supplierPath.split("/").slice(-1).pop();
-        console.log(employeeId);
         this.getRouter().navTo("employeeDetail", { employeeId });
       },
       handleGenerateQRCode: function () {

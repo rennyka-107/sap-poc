@@ -178,7 +178,6 @@ sap.ui.define(
           path: "/ProductCollection/" + employeeId,
           model: "products",
         });
-        console.log(employeeId, "id");
       },
       getCurrentParams: function (
         router = this.getOwnerComponent().getRouter()

@@ -2,12 +2,13 @@
 	xmlns="sap.m"
 	xmlns:l="sap.ui.layout"
 	xmlns:f="sap.ui.layout.form"
+	controllerName="sap-app.components.Employee.employment.BlockDetailPart1"
 	xmlns:core="sap.ui.core">
 		
 		
-			 <FlexBox width="100%" > 
+	 <FlexBox width="800px" > 
 			 
-			 <VBox fitContainer="true">
+			 <VBox  fitContainer="true">
 					<layoutData>
 					<FlexItemData
 					growFactor="1"
@@ -16,23 +17,22 @@
 					styleClass="sapUiTinyMargin" />
 				</layoutData> 
 				<Title text="Home Address" />
-				
-				<Input id="name" value="{SupplierName}" />
+			<Input value="{/ADDRESS}" id="name"/>
 				<Label text="Street/No." />
-				<Input value="{Street}">
+				<Input value="{/DEPARTMENT}">
 				</Input>
-				<Input value="{HouseNumber}">
+				<Input value="{/PHONENUMBER}">
 					<layoutData>
 						<f:ColumnElementData cellsSmall="2" cellsLarge="1" />
 					</layoutData>
 				</Input>
 				<Label text="ZIP Code/City" />
-				<Input value="{ZIPCode}">
+				<Input value="{/EMPLOYEEID}">
 					<layoutData>
 						<f:ColumnElementData cellsSmall="3" cellsLarge="2" />
 					</layoutData>
 				</Input>
-				<Input value="{City}" />
+				<Input value="{/SORT_DES}" />
 				<Label text="Country" />
 				<Select id="country" selectedKey="{Country}">
 					<items>
@@ -42,7 +42,7 @@
 					</items>
 				</Select>
 				<Label text="Web" />
-				<Input value="{Url}" type="Url"/>
+				<Input value="{/AVATAR}" type="Url"/>
 				</VBox>
 				
 				 <VBox fitContainer="true">
@@ -60,7 +60,7 @@
 				</VBox>
 				
 
-						 <VBox fitContainer="true">
+		 <VBox fitContainer="true">
 				<layoutData>
 					<FlexItemData
 						growFactor="1"
@@ -70,12 +70,11 @@
 				</layoutData> 
 			<Title text="Contact" />
 			
-				<Input value="{Twitter}" />
+				<Input value="{/ADDRESS /EMPLOYEEID}" />
 				<Label text="Email" />
-				<Input value="{Email}" type="Email"/>
+				<Input value="{/EMAIL}" type="Email"/>
 				<Label text="Tel." />
-				<Input value="{Tel}" type="Tel"/>
-				</VBox>
-					
-				</FlexBox>
+				<Input value="{/PHONENUMBER}" type="Tel"/>
+			</VBox>
+		</FlexBox>
 </core:FragmentDefinition>

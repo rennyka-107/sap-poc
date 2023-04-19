@@ -17,12 +17,8 @@ sap.ui.define(
           let model = new JSONModel(dataLogin);
           this.getView().setModel(model);
         },
-        onAfterRendering: function () {
-          //   console.log("before rendering");
-        },
+        onAfterRendering: function () {},
         handleSubmit: function () {
-          console.log("form submit", this.getView().getModel().getData());
-
           // const { username, password } = this.getView().getModel().getData();
           // if (username === "admin" && password === "admin") {
           //   localStorage.setItem("accessToken", "admin-token");
