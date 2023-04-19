@@ -1,9 +1,9 @@
-
 <core:FragmentDefinition
 	xmlns="sap.m"
 	xmlns:l="sap.ui.layout"
 	xmlns:f="sap.ui.layout.form"
-	
+	controllerName="sap-app.components.Employee.goals.BlockDetailPart1"
+
 	xmlns:core="sap.ui.core">
 	<VBox class="sapUiSmallMargin">
 		<f:Form id="FormChange354wideDual"
@@ -33,13 +33,18 @@
 					<f:formElements>
 						<f:FormElement label="Họ và tên">
 							<f:fields>
-								<Input value="{SupplierName}" id="name"/>
+								<Input value="{/ENAME}" id="name"/>
+							</f:fields>
+						</f:FormElement>
+						<f:FormElement label="Email">
+							<f:fields>
+								<Input value="{/EMAIL}" id="email"/>
 							</f:fields>
 						</f:FormElement>
 						<f:FormElement label="Số điện thoại">
 							<f:fields>
-								<Input value="{Street}" />
-								<Input value="{HouseNumber}">
+								<Input value="{/PHONENUMBER}" />
+								<Input value="{/DEPARTMENT}">
 									<layoutData>
 										<l:GridData span="XL1 L2 M2 S4" />
 									</layoutData>
@@ -48,23 +53,17 @@
 						</f:FormElement>
 						<f:FormElement label="ZIP Code City">
 							<f:fields>
-								<Input value="{ZIPCode}">
+								<Input value="{/EMPLOYEEID}">
 									<layoutData>
 										<l:GridData span="XL1 L2 M2 S4" />
 									</layoutData>
 								</Input>
-								<Input value="{City}" />
+								<Input value="{/SORT_DES}" />
 							</f:fields>
 						</f:FormElement>
 						<f:FormElement label="Địa chỉ">
 							<f:fields>
-								<Select id="country" selectedKey="{Country}">
-									<items>
-										<core:Item text="England" key="England"/>
-										<core:Item text="Germany" key="Germany"/>
-										<core:Item text="USA" key="USA"/>
-									</items>
-								</Select>
+								<Input value="{/ADDRESS}" />
 							</f:fields>
 						</f:FormElement>
 					</f:formElements>

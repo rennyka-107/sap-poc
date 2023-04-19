@@ -6,33 +6,6 @@ sap.ui.define(
     var BlockEmpDetailPart1 = BlockBase.extend(
       "sap-app.components.Employee.goals.BlockDetailPart1",
       {
-        onInit: function () {
-          var oModel = new JSONModel();
-          let oProductsModel = new JSONModel(
-            sap.ui.require.toUrl("sap-app/models/products.json")
-          );
-          console.log(oProductsModel);
-          oProductsModel.setSizeLimit(1000);
-          console.log("ss");
-          // this.getView().setModel(oProductsModel, "products");
-          fetch("/proxy/sphinx/api_get_emp2?sap-client=800", {
-            method: "GET",
-            headers: {
-              Authorization: "Basic dnVvbmc6dHVlbWluaDQ=",
-            },
-          })
-            .then((res) => res.json())
-            .then((res) => {
-              oModel.setData(res);
-              console.log(res);
-              this.getView().setModel(oModel, "products");
-            });
-          // this.getView().byId("html").setContent("<canvas id='signature-pad' width='400' height='200' class='signature-pad'></canvas>");
-          this.oView = this.getView();
-          this._bDescendingSort = false;
-          this.oModel = this.oView.byId("productsTable");
-          this.oRouter = this.getOwnerComponent().getRouter();
-        },
         metadata: {
           views: {
             Collapsed: {
@@ -45,6 +18,48 @@ sap.ui.define(
             },
           },
         },
+        init: function () {
+          BlockBase.prototype.init.apply(this, arguments);
+          var oModel = new JSONModel();
+          // set explored app's demo model on this sample
+          fetch("/proxy/sphinx/api_get_emp2?sap-client=800", {
+            method: "GET",
+            headers: {
+              Authorization: "Basic dnVvbmc6dHVlbWluaDQ=",
+            },
+          })
+            .then((res) => res.json())
+            .then((res) => {
+              oModel.setData(...res.SAP_DATA);
+              this.setModel(oModel);
+            });
+        },
+        handleClose: function (oEvent) {},
+        handleChange: function (oEvent) {
+          var state = oEvent.getParameter("state");
+          const oData = this.getModel().getData();
+          const model = new JSONModel({
+            ...oData,
+            health: state,
+          });
+
+          this.setModel(model);
+        },
+        handleChangeSavings: function (oEvent) {
+          var state = oEvent.getParameter("state");
+          const model = new JSONModel({
+            savings: state,
+          });
+          this.setModel(model);
+        },
+        handleChangeRetirement: function (oEvent) {
+          var state = oEvent.getParameter("state");
+          const model = new JSONModel({
+            retirement: state,
+          });
+          this.setModel(model);
+        },
+        textClick: function (event) {},
       }
     );
     return BlockEmpDetailPart1;

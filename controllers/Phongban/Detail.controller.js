@@ -9,7 +9,7 @@ sap.ui.define(
   function (BaseController, JSONModel, History, Filter, FilterOperator) {
     "use strict";
 
-    return BaseController.extend("sap-app.controllers.Worklist.Detail", {
+    return BaseController.extend("sap-app.controllers.Phongban.Detail", {
       /* =========================================================== */
       /* lifecycle methods                                           */
       /* =========================================================== */
@@ -38,11 +38,10 @@ sap.ui.define(
         const { objectId } = this.getCurrentParams(
           this.getOwnerComponent().getRouter()
         );
-        console.log(this.getOwnerComponent().getModel("productList"));
+
         var oProductDetail = this.getOwnerComponent()
           .getModel("productList")
           .getData().ProductCollection[objectId];
-        console.log(oProductDetail, "oProductDetail");
         var oModel = new JSONModel(oProductDetail);
         this.getView().setModel(oModel);
         this.getView().setModel(oViewModel, "worklistView");
@@ -62,7 +61,7 @@ sap.ui.define(
         if (sPreviousHash !== undefined) {
           history.go(-1);
         } else {
-          this.getRouter().navTo("worklist", {}, true);
+          this.getRouter().navTo("Phongban", {}, true);
         }
       },
       getCurrentParams: function (
@@ -116,7 +115,6 @@ sap.ui.define(
         const { objectId } = this.getCurrentParams(
           this.getOwnerComponent().getRouter()
         );
-        console.log(objectId);
         this.getView().bindElement({
           path: "/ProductCollection/" + objectId,
           model: "products",

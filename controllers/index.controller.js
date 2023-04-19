@@ -12,9 +12,7 @@ sap.ui.define(
               Authorization: "Basic dnVvbmc6dHVlbWluaDQ=",
             },
           }
-        )
-          .then((res) => res.json())
-          .then((res) => console.log(ressd, "res"));
+        ).then((res) => res.json());
       },
       onAfterRendering: function () {
         this.getRouter().navTo("employeesList");

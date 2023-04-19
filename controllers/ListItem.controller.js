@@ -15,12 +15,9 @@ sap.ui.define(
               },
             });
             this.getView().setModel(model);
-            console.log(resssss, "res");
           });
       },
-      onAfterRendering: function () {
-        console.log("after renderingssss");
-      },
+      onAfterRendering: function () {},
     });
   }
 );
