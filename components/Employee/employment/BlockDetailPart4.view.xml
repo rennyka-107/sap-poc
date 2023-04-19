@@ -15,6 +15,19 @@
 		</headerToolbar>
 			<content>
 			  <VBox>
+			    <FlexBox alignItems="Center">
+					<Text text='Plan Ebility' width="100px"/>
+					<Switch enabled="{DetailEmployee>/isEditing}" state="{/health`}" customTextOn="On" customTextOff="Off" change=".handleChange">
+					<layoutData>
+						<FlexItemData growFactor="1" />
+					</layoutData>
+					</Switch>
+				</FlexBox>
+					<m:MessageStrip
+					text="Here some likely Salary Grades for this job. You can pick one of these or provide your own Salary Values"
+					design="Information"
+					close="handleClose"
+				/>
 				<List items="{/RETITEMENT}">
 				<CustomListItem>
 				  <FlexBox justifyContent="SpaceBetween" alignItems="Center">
@@ -38,6 +51,19 @@
 		</headerToolbar>
 		<content>
 			  <VBox>
+			    <FlexBox alignItems="Center">
+					<Text text='Plan Ebility' width="100px"/>
+					<Switch enabled="{DetailEmployee>/isEditing}" state="{/health`}" customTextOn="On" customTextOff="Off" change=".handleChange">
+					<layoutData>
+						<FlexItemData growFactor="1" />
+					</layoutData>
+					</Switch>
+				</FlexBox>
+					<m:MessageStrip
+					text="Here some likely Salary Grades for this job. You can pick one of these or provide your own Salary Values"
+					design="Information"
+					close="handleClose"
+				/>
 				<List items="{/SAVINGS}">
 				<CustomListItem>
 				  <FlexBox justifyContent="SpaceBetween" alignItems="Center">
@@ -69,11 +95,27 @@
 					</layoutData>
 					</Switch>
 				</FlexBox>
-			  	<m:MessageStrip
+					<m:MessageStrip
 					text="Here some likely Salary Grades for this job. You can pick one of these or provide your own Salary Values"
 					design="Information"
 					close="handleClose"
 				/>
+				<FlexBox
+					wrap="Wrap"
+					height="48px"
+					justifyContent="SpaceBetween"
+					alignItems="Center"
+				>
+					<Text
+						text="Plan code"
+						width="106px"
+						textAlign="Center"
+					/>
+					<Text text="Descripiton"/>
+					<Text text="Enrolled"/>
+				</FlexBox>
+			  
+				
 				<List items="{/HEALTH}">
 				<CustomListItem>
 				  <FlexBox justifyContent="SpaceBetween" alignItems="Center">

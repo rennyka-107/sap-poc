@@ -12,10 +12,36 @@ sap.ui.define(
 
     return Controller.extend("sap.ui.table.sample.Basic.Controller", {
       onInit: function () {
-    
+        
 
         var oJSONModel = this.initSampleDataModel();
         this.getOwnerComponent().setModel(oJSONModel, "DetailEmployee");
+        var oModel = new JSONModel();
+        var oModelSampleSalary = new JSONModel();
+          
+        // set explored app's demo model on this sample
+        fetch("/proxy/sphinx/salary?sap-client=800", {
+          method: "GET",
+          headers: {
+            Authorization: "Basic dnVvbmc6dHVlbWluaDQ="
+          }
+        }).then(res => res.json()).then(res => {
+          console.log(res)
+          
+          oModel.setData(res.SAP_SALARY.PAYROLL)
+          oModelSampleSalary.setData({SAMPLESALARY:res.SAP_SALARY.SAMPLESALARY})
+          this.getOwnerComponent().setModel(oModel, "salary");
+          this.getView().setModel(oModelSampleSalary);
+          
+        })
+        fetch("/proxy/sphinx/get_emp_infor?sap-client=800", {
+          method: "GET",
+          headers: {
+            Authorization: "Basic dnVvbmc6dHVlbWluaDQ="
+          }
+        }).then(res => res.json()).then(res => {
+          console.log(res,"detail")
+        })
       },
 
       initSampleDataModel: function () {
@@ -97,12 +123,13 @@ sap.ui.define(
         const oDataModel = this.getOwnerComponent()
           .getModel("DetailEmployee")
           .getData();
-        console.log("form submit", oDataModel);
         var data = Object.assign({}, { ...oDataModel, isEditing: false });
         this.getOwnerComponent().setModel(
           new JSONModel(data),
           "DetailEmployee"
         );
+        console.log(this.getOwnerComponent().getModel("salary"))
+        console.log(this.getView().getModel())
         MessageToast.show("Update Success");
       },
       updateMultipleSelection: function (oEvent) {

@@ -14,9 +14,9 @@
 				<Title text="Sample Salary Grades for this position"/>
 			</Toolbar>
 		</headerToolbar>
-		<content>
-			<VBox class="sapUiTinyMargin">
-				<m:MessageStrip
+			<content>
+			  <VBox>
+			  	<m:MessageStrip
 					text="Here some likely Salary Grades for this job. You can pick one of these or provide your own Salary Values"
 					design="Information"
 					close="handleClose"
@@ -35,53 +35,26 @@
 					<Text text="Descripiton"/>
 					<Text text="Enrolled"/>
 				</FlexBox>
-				<FlexBox
-					wrap="Wrap"
-					justifyContent="SpaceBetween"
-					alignItems="Center"
-				>
-					<RadioButton
-						id="RB1-1"
-						text="RET0293"
-					/>
-					<Text text="Descripiton"/>
-					<Text text="483"/>
-				</FlexBox>
-				<FlexBox
-					wrap="Wrap"
-					justifyContent="SpaceBetween"
-					alignItems="Center"
-				>
-					<RadioButton
-						id="RB1-2"
-						text="RET0294"
-					/>
-					<Text text="Descripiton"/>
-					<Text text="325"/>
-				</FlexBox>
-				<FlexBox
-					wrap="Wrap"
-					justifyContent="SpaceBetween"
-					alignItems="Center"
-				>
-					<RadioButton
-						id="RB1-3"
-						text="RET0295"
-					/>
-					<Text text="Descripiton"/>
-					<Text text="839"/>
-				</FlexBox>
-			</VBox>
+				<List items="{/SAMPLESALARY}">
+				<CustomListItem>
+				  <FlexBox justifyContent="SpaceBetween" alignItems="Center">
+				  <RadioButton groupName="health" text="{GRADE}"/>
+					<Text text="{AMOUNTPERPERIOD}"/>
+					<Text text="{HOURSPERWEEK}"/>
+				  </FlexBox>
+				</CustomListItem>
+				</List>
+ 			 </VBox>
 		</content>
 	</Panel>
 			<Label text="Grade" />
-			<Input enabled="{DetailEmployee>/isEditing}" valueLiveUpdate="true" width="100%" value="{DetailEmployee>/number}"/>
+			<Input enabled="{DetailEmployee>/isEditing}" valueLiveUpdate="true" width="100%" value="{salary>/GRADE}"/>
 			<Label text="Hours/Week: Period"/>
-			<Input enabled="{DetailEmployee>/isEditing}" valueLiveUpdate="true" value="{DetailEmployee>/time}" width="100%"/>
+			<Input enabled="{DetailEmployee>/isEditing}" valueLiveUpdate="true" value="{salary>/HOURSPERWEEK}" width="100%"/>
 			<Label text="Amount/Period: USD "/>
-			<Input enabled="{DetailEmployee>/isEditing}" valueLiveUpdate="true" value="{DetailEmployee>/amount}" width="100%"/>
+			<Input enabled="{DetailEmployee>/isEditing}" valueLiveUpdate="true" value="{salary>/AMOUNTPERPERIOD}" width="100%"/>
 			<Label text="Annual/Salary: USD "/>
-			<Input enabled="{DetailEmployee>/isEditing}" valueLiveUpdate="true" value="{DetailEmployee>/salary}" width="100%"/>
+			<Input enabled="{DetailEmployee>/isEditing}" valueLiveUpdate="true" value="{salary>/SALARYPERYEAR}" width="100%"/>
 			<Button visible="{DetailEmployee>/isEditing}" text="Submit" press=".handleSubmit"/>
  
 </mvc:View>

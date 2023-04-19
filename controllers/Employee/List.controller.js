@@ -25,7 +25,7 @@ sap.ui.define(
         console.log(oProductsModel);
         oProductsModel.setSizeLimit(1000);
         // this.getView().setModel(oProductsModel, "products");
-        fetch("/proxy/sphinx/api_get_emp2?sap-client=800", {
+        fetch("/proxy/sphinx/get_emp_infor?sap-client=800", {
           method: "GET",
           headers: {
             Authorization: "Basic dnVvbmc6dHVlbWluaDQ="
