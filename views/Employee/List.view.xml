@@ -20,7 +20,7 @@
 					id="productsTable"
 					inset="false"
 					items="{
-						path: 'products>/SAP_DATA',
+						path: 'products>/DATA',
 						sorter: {
 							path: 'Name'
 						}
@@ -39,7 +39,7 @@
 						<m:ColumnListItem type="Navigation" press=".onListItemPress">
 							<m:cells>
 								<m:ObjectIdentifier title="{products>ENAME}" text="{products>DEPARTMENT}"/>
-								<m:ObjectIdentifier title="{products>EMAIL}" text="{products>ADDRESS}"/>
+								<m:ObjectIdentifier title="{products>EMPLOYEEID}" text="{products>POSITIONS}"/>
 								<!-- <m:ObjectNumber
 									number="{
 										parts:[
